@@ -1,0 +1,79 @@
+#topbar {
+	background-color: #F2F2F2; height: 30px; border-bottom-color: #CFCFCF; 
+	border-bottom-width: 1px; border-bottom-style:solid;
+}
+.welcome {
+	color: #8B8B83; margin-left:50px;
+}
+.logo {
+	color: #218868; font-weight: bold; font-size:large; margin-left:5px;
+}
+.login {
+	color: red; margin-left:5px; margin-right:5px;
+}
+.register {
+	color: red; margin-left:5px;
+}
+#shortcut {
+	float:right; margin-right:150px; line-height: 2.5; font-size:12px;
+}
+.cart {
+	color:#8B8B83; 
+}
+.order {
+	color:#8B8B83;
+}
+.center {
+	color:#8B8B83; 
+}
+.help {
+	color:#8B8B83;
+}
+#main {
+	width:80%; height:800px; margin:0 auto;
+}
+#search_container {
+	height:45px; background-color: #1874CD; margin-top:25px;
+}
+
+.search_text {
+	color:white; font-size:large; font-family:"MS Sans Serif"; width:85px;  margin-left:120px;
+	line-height:2.5; font-weight: bold; float:left;
+}
+.input_container {
+	float: left; height:40px; margin-top:7px; width: 68%; 
+}
+.search_button {
+	width: 10px; height: 50px; float:left;
+}
+.input_box {
+	display:block; width: 90%; height: 25px; font-style:italic; color:#8B8B83; font-size:16px;
+}
+.ok_button {
+	width: 65px; height:30px; display:block; float: right; margin-top:7px;
+}
+#category_list {
+	width:25%; border: 2px solid #E0EEEE; height:536px; margin-top:10px; padding: 0; float:left;
+}
+.item_control {
+	width:163px; padding-left:20px; padding-top:0;
+}
+.item_tilte {
+	background-color:#F1F1EC; height:35px; margin-top:0;
+}
+.novel_text {
+	display:inline; line-height:10px; 
+}
+p {
+	font-size:12px;
+}
+.clearfix {
+	margin-top:0;
+}
+#content_right {
+	float:left; width:74%; height:600px;margin-left:5px; margin-top: 10px;
+}
+
+#footer {
+	width:80%; height:60px; margin:0 auto;
+}
