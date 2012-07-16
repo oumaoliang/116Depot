@@ -1,140 +1,18 @@
+<!-- START:head -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to BookOnline</title>
-  <link rel="stylesheet" type="text/css" href="../../../public/stylesheets/global.css" />
-  <link rel="stylesheet" type="text/css" href="../../../public/stylesheets/mainpage.css" />
+  <title>Depot</title>
+<!-- START_HIGHLIGHT -->
+  <%= stylesheet_link_tag :all %>
+<!-- END_HIGHLIGHT -->
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
 </head>
+<!-- END:head -->
 <body>
-	<div id = "topbar">
-		<div class="welcome">
-			欢迎来到<a href="application.html.erb"><font class="logo">BookOnline</font></a>!
-			请<a href="#" ><font class="login">登录</font></a>，或<a href="#"><font class="register">注册</font></a>
-			<div id="shortcut">
-				<a href="#"><font class="cart">购物车|</font></a><a href="#"><font class="order">我的订单|</font></a>
-				<a href="#"><font class="center">个人中心|</font></a><a href="#"><font class="help">帮助</font></a>
-			</div>
-		</div>
-	</div>
-	<div id="main">
-		<div id="search_container">
-			<div class="search_text">搜索书籍:</div>
-			<div class="input_container" ><input type="text" value="请输入关键字" class="input_box" /></div>
-			<div class="search_button"><input type="button" class="ok_button" value="搜索" autofocus="true" /></div>
-		</div>
-		<div id="category_list">
-			<ul class="clearfix">
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/novel_pic.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">小说</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">言情</a>
-						<a href="#" target="_blank" title="言情">悬疑</a>
-						<a href="#" target="_blank" title="言情">历史</a>
-						<a href="#" target="_blank" title="言情">科幻</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/art.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">文艺</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">文学</a>
-						<a href="#" target="_blank" title="言情">传记</a>
-						<a href="#" target="_blank" title="言情">艺术</a>
-						<a href="#" target="_blank" title="言情">动漫</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/child.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">童书</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">育儿</a>
-						<a href="#" target="_blank" title="言情">绘本</a>
-						<a href="#" target="_blank" title="言情">启蒙</a>
-						<a href="#" target="_blank" title="言情">孕期</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/life.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">生活</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">旅行</a>
-						<a href="#" target="_blank" title="言情">美食</a>
-						<a href="#" target="_blank" title="言情">美妆</a>
-						<a href="#" target="_blank" title="言情">保健</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/economic.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">财经/励志</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">经济</a>
-						<a href="#" target="_blank" title="言情">管理</a>
-						<a href="#" target="_blank" title="言情">励志</a>
-						<a href="#" target="_blank" title="言情">求职</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/technic.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">科技</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">自然科学</a>
-						<a href="#" target="_blank" title="言情">建筑</a>
-						<a href="#" target="_blank" title="言情">工农业</a>
-						<a href="#" target="_blank" title="言情">医学</a>
-						
-					</p>
-				</li>
-				<li class="menu_item">
-					<h3 class="item_tilte">
-						<span></span>
-						<a class="book_pic" href="#"><img src="../../../public/images/exam.jpg" alt="pic" width="32" height="32" /></a>
-						<a class="novel_text" href="#" target="_blank">考试/教育</a>
-					</h3>
-					<p class="item_control">
-						<a href="#" target="_blank" title="言情">外语</a>
-						<a href="#" target="_blank" title="言情">考试</a>
-						<a href="#" target="_blank" title="言情">教辅</a>
-						<a href="#" target="_blank" title="言情">教材</a>
-						
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div id="content_right">
-			<div class="recommend_slide">
-				<font class="recommend_text">热门推荐</font>
-				<hr />
-			</div>
-			<div class="hot_slide"></div>
-		</div>
-	</div>
 
-	<div id="footer">
-		bottom of this page...
-	</div>
+<%= yield %>
+
 </body>
 </html>

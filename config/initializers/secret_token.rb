@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-BookOnline::Application.config.secret_token = '4173c00f29f2505eac7541dc8cf425e21874be65ceb3723e4d32ccdad7291c6bf3552a16d9892aa6d3e757a8982077eb2b7dc72ebc408f9380245a2c1830ff7f'
+Depot::Application.config.secret_token = '291684313e09aa167d3d1b6f3841b84b331158c574e44433d63f12551d8e839b048d59d6518d74a9a921845a6af58ddf2e9f24bca52f6d092c9474d696c69f18'
