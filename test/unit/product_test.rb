@@ -50,13 +50,13 @@ class ProductTest < ActiveSupport::TestCase
 	end
    end
    test "product is not valid without a unique titile - i18n" do
-	product = Product.new(:title		=> product(:ruby).title,
+	product = Product.new(:title		=> products(:ruby).title,
 							:description	=> "yyy",
 							:price		=> 1,
 							:image_url		=> "fred.gif")
 							
 	assert !product.save
-	assert_equal I18n.translate('activerecord.error.message.taken'),
-				product.error[:title].join(';')
+	assert_equal I18n.translate('activerecord.errors.messages.taken'),
+				product.errors[:title].join(';')
    end
 end
