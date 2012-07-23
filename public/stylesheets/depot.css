@@ -2,6 +2,18 @@
 body {
 	margin:0 auto;
 }
+
+/* Styles for the cart in the side bar */
+#cart, #cart table{
+	font-size: smaller;
+	color: white;
+}
+
+#cart table{
+	border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+}
 #store #notice {
         color: #000;
         border: 2px solid red;
@@ -145,7 +157,7 @@ body {
 	background: #141;
 }
 #main {
-	margin-left: 13em;
+	margin-left: 15em;
 	padding-top:4ex;
 	padding-left:2em;
 	background:white;
@@ -155,7 +167,7 @@ body {
 	padding-top: 1em;
 	padding-left: 1em;
 	padding-bottom: 1em;
-	width: 12em;
+	width: 14em;
 	background: #141;
 }
 #side a {
