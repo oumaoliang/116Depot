@@ -47,12 +47,13 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
-    @order.add_line_items_form_cart(current_cart)
+    @order.add_line_items_from_cart(current_cart)
     
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        Notifier.order_received(@order).deliver
         format.html { redirect_to(store_url, :notice => 
           'Thank you for your order.') }
         format.xml  { render :xml => @order, :status => :created, 
