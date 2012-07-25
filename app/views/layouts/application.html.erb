@@ -30,10 +30,17 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
 					<%= render @cart %>
 				<% end %>
 			<% end %>
+
+			<a href="/">Home</a><br />
+			<a href="http://www..../faq">Questions</a><br />
+			<a href="http://www..../news">News</a><br />
+			<a href="http://www..../contact">Contact</a><br />
+
 			<a href="http://www...."><%= t('.home') %></a><br />
 			<a href="http://www..../faq"><%= t('.questions') %></a><br />
 			<a href="http://www..../news"><%= t('.news') %></a><br />
 			<a href="http://www..../contact"><%= t('.contact') %></a><br />
+
 			
 			<%if session[:user_id]%>
 				<br />
