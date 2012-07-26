@@ -30,8 +30,8 @@ Depot::Application.configure do
     :port                 => 587,
     :domain               => "domain.of.sender.net",
     :authentication       => "plain",
-    :user_name            => "dave",
-    :password             => "secret",
+    :user_name            => "12web116@gmail.com",
+    :password             => "12web116",
     :enable_starttls_auto => true
   }
 end
