@@ -37,3 +37,39 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75)
+  
+  Product.create(:title => 'C++',
+  :description =>
+    %{<p>
+        C++ prime
+      </p>},
+  :image_url => '/images/c.jpg',
+  :price => 45.0)
+# . . .
+
+Product.create(:title => 'story',
+  :description =>
+    %{<p>
+        story
+      </p>},
+  :image_url => '/images/story1.jpg',
+  :price => 23.2)
+# . . .
+
+Product.create(:title => 'story2',
+  :description =>
+    %{<p>
+       story2
+      </p>},
+  :image_url => '/images/story2.jpg',
+  :price => 45.2)
+# . . .
+
+Product.create(:title => 'story3',
+  :description =>
+    %{<p>
+       story3
+      </p>},
+  :image_url => '/images/story3.jpg',
+  :price => 12.4)
+# . . .
