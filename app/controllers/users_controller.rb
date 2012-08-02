@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
+
     @users = User.order(:name)
 
     respond_to do |format|
@@ -10,7 +11,23 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
+
+
+  #GET /users/check_name
+  #GET /users/check_name.xml
+  def check_name
+    #@user = User.find(params[@user.name])
+    @user = User.find_by_name(params[:name])
+    respond_to do |format|
+      if @user
+        format.html { redirect_to(users_url, :notice => "User #{@user.name} in use.")}
+      else
+        format.html { redirect_to(users_url, :notice => "is avaliable.")}
+      end
+    end
+  end
+  
+    # GET /users/1
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
@@ -20,7 +37,7 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @user }
     end
   end
-
+  
   # GET /users/new
   # GET /users/new.xml
   def new

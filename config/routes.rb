@@ -6,6 +6,15 @@ Depot::Application.routes.draw do
     post'login' =>:create
     delete 'logout'=>:destroy
   end
+  resources :users do
+       member do
+         get 'check_name'
+       end
+  
+       collection do
+         get 'check_name'
+       end
+  end
   scope '(:locale)' do
   resources :users
 

@@ -6,4 +6,8 @@ rbsf
 hnspi
 shgiohgajg
 
+<<<<<<< HEAD
 branch test
+=======
+wjgdgg fff
+>>>>>>> 454064764e22c7f781d79a1d325940588057ee8c

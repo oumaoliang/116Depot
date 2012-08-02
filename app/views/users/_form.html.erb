@@ -1,3 +1,43 @@
+<script type="text/javascript">
+	function showHint(str)
+	{
+	var xmlhttp;
+	var name = str;
+	if (str=="")
+	  {
+	  document.getElementById("txtHint").innerHTML="";
+	  return;
+	  }
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+	    	var reg = /in use/;
+	    	var result = reg.exec(xmlhttp.responseText);
+	    	if (result == "in use")	{
+	    		document.getElementById("txtHint").innerHTML="I'm sorry, but "+name + " is in use.";
+	    		document.getElementById("txtHint").style.color = "red";
+	    	}
+	    	else {
+	    		document.getElementById("txtHint").innerHTML="congratulatons, " + name + " is avaliable!";
+	    		document.getElementById("txtHint").style.color = "green";
+	    	}
+	    }
+	    
+	  }
+	xmlhttp.open("GET","check_name?name="+name,true);
+	xmlhttp.send();
+	}
+</script>
+<p id="notice"><%= notice%></p>
 <div class = "depot_form">
   
 <%= form_for @user do |f| %>
@@ -16,9 +56,10 @@
   <fieldset>
   	<legend>Enter User Details</legend>
   	
-  	<div>
+  	<div id="ajaxdiv">
     	<%= f.label :name %><br />
-	    <%= f.text_field :name, :size => 40 %>
+	    <%= f.text_field :name, :size => 40, :onblur => "showHint(this.value)"%>
+	    <span id="txtHint" ></span>
 	</div>
 	<div>
 	    <%= f.label :password, 'Password' %><br />
