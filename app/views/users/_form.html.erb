@@ -1,42 +1,4 @@
-<script type="text/javascript">
-	function showHint(str)
-	{
-	var xmlhttp;
-	var name = str;
-	if (str=="")
-	  {
-	  document.getElementById("txtHint").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    	var reg = /in use/;
-	    	var result = reg.exec(xmlhttp.responseText);
-	    	if (result == "in use")	{
-	    		document.getElementById("txtHint").innerHTML="I'm sorry, but "+name + " is in use.";
-	    		document.getElementById("txtHint").style.color = "red";
-	    	}
-	    	else {
-	    		document.getElementById("txtHint").innerHTML="congratulatons, " + name + " is avaliable!";
-	    		document.getElementById("txtHint").style.color = "green";
-	    	}
-	    }
-	    
-	  }
-	xmlhttp.open("GET","check_name?name="+name,true);
-	xmlhttp.send();
-	}
-</script>
+<script type="text/javascript" src="/javascripts/check.js"></script>
 <p id="notice"><%= notice%></p>
 <div class = "depot_form">
   
@@ -63,14 +25,16 @@
 	</div>
 	<div>
 	    <%= f.label :password, 'Password' %><br />
-	    <%= f.password_field :password, :size => 40 %>
+	    <%= f.password_field :password, :id => "pwd", :size => 40, :onblur => "checkPWD(this.value)" %>
+	    <span id="PWDHint" ></span>
 	</div>
 	<div>
 	    <%= f.label :password_confirmation, 'Confirm' %><br />
-	    <%= f.password_field :password_confirmation, :size => 40 %>
+	    <%= f.password_field :password_confirmation, :size => 40, :onkeyup => "pwdConfirm(this.value)" %>
+	    <span id="confirmHint" ></span>
 	</div>
 	<div>
-	    <%= f.submit %>
+	    <%= f.submit :id => "btnOK" %>
 	</div>
   </fieldset>
 <% end %>
