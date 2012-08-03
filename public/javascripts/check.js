@@ -1,9 +1,12 @@
 function showHint(str)
 {
+	var flag = false;
 	document.getElementById("btnOK").disabled = true;
 	var xmlhttp;
 	var name = str;
-	var reg_express = /^[a-zA-Z]+\d*/;
+	var reg_express = /^[a-zA-Z]+\d*$/;
+	var str_pwd = document.getElementById("pwd").value;
+	var str_pwdConfirm = document.getElementById("pwd_confirm").value;
 	if (str == "") {
 		document.getElementById("txtHint").innerHTML="* can not be empty.";
 		document.getElementById("txtHint").style.color = "red";
@@ -35,6 +38,11 @@ function showHint(str)
 		    	else {
 		    		document.getElementById("txtHint").innerHTML="* congratulatons, " + name + " is avaliable!";
 		    		document.getElementById("txtHint").style.color = "green";
+		    		if ((str_pwd == str_pwdConfirm) && (str_pwd != "")) {
+		    			document.getElementById("btnOK").disabled = false;
+		    			return;
+		    		}
+		    		return true;
 		   		}
 			}
 		    
@@ -59,6 +67,7 @@ function checkPWD(str)
 
 function pwdConfirm(str)
 {
+	document.getElementById("btnOK").disabled = true;
 	var pwd_str = document.getElementById("pwd").value;
 	if (str == "" || str != pwd_str) {
 		document.getElementById("confirmHint").innerHTML="* doesn't match!";
@@ -68,7 +77,8 @@ function pwdConfirm(str)
 	else {
 		document.getElementById("confirmHint").innerHTML="* ok!";
 		document.getElementById("confirmHint").style.color = "green";
-		document.getElementById("btnOK").disabled = false;
+		if (showHint(document.getElementById("fname").value))
+			document.getElementById("btnOK").disabled = false;
 		return;
 	}
 }

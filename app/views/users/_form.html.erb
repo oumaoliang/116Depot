@@ -20,7 +20,7 @@
   	
   	<div id="ajaxdiv">
     	<%= f.label :name %><br />
-	    <%= f.text_field :name, :size => 40, :onblur => "showHint(this.value)"%>
+	    <%= f.text_field :name, :size => 40, :id => "fname", :onkeyup => "showHint(this.value)"%>
 	    <span id="txtHint" ></span>
 	</div>
 	<div>
@@ -30,7 +30,7 @@
 	</div>
 	<div>
 	    <%= f.label :password_confirmation, 'Confirm' %><br />
-	    <%= f.password_field :password_confirmation, :size => 40, :onkeyup => "pwdConfirm(this.value)" %>
+	    <%= f.password_field :password_confirmation, :id => "pwd_confirm", :size => 40, :onkeyup => "pwdConfirm(this.value)" %>
 	    <span id="confirmHint" ></span>
 	</div>
 	<div>
