@@ -73,3 +73,6 @@ Product.create(:title => 'story3',
   :image_url => '/images/story3.jpg',
   :price => 12.4)
 # . . .
+
+User.create(:name => 'dave', :password => 'secret',
+  :password_confirmation => 'secret')
