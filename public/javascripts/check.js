@@ -53,6 +53,7 @@ function showHint(str)
 
 function checkPWD(str)
 {
+	document.getElementById("btnOK").disabled = true;
 	if (str == "") {
 		document.getElementById("PWDHint").innerHTML="* can not be empty!";
 		document.getElementById("PWDHint").style.color = "red";
