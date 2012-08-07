@@ -219,3 +219,70 @@ body {
     padding-top: 0.2em;
     padding-right: 0.5em;
 }
+<<<<<<< HEAD
+
+=======
+#service {
+	margin-top:50px;
+}
+
+/*styles for questions/index */
+#question_list{
+	width :900px;
+	margin:auto;
+}
+
+#question_list h1{
+	height: 50px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#question_list img{
+	width: 100px;
+	height: 150px;
+	margin: 3em 1em;
+}
+
+#question_list #one_question{
+	margin:1em;
+	border: double 3px #CCCCCC;
+	padding-bottom: 1em;
+	clear:left;
+	overflow:hidden;
+}
+
+#question_list #one_question #left_banner{
+	width: 15%;
+	float: left;
+	background:#F0F0F0;
+	padding:1em;
+	margin:0px;
+}
+
+#question_list #one_question #content{
+	float:right;
+	width:80%;
+}
+
+#question_list #one_question #content #title{
+	border:dotted 1px gray;
+	background:#E0F8F8;
+	font-size:medium;
+	font-weight:bolder;
+}
+#question_list #one_question #content #description{
+	margin: 15px;	
+}
+
+#question_list #one_question #content .question_labels{
+	float:left;
+	width:100px;
+	font-weight: bolder;
+}
+
+#question_list #one_question #content p{
+	margin-left:3em;	
+	clear:left;
+}
+>>>>>>> 745ff94677d105948dc342a17dd1316ead821467

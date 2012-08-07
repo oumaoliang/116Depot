@@ -74,6 +74,7 @@ Product.create(:title => 'story3',
   :price => 12.4)
 # . . .
 
+<<<<<<< HEAD
 Product.create(:title => 'English for Grade3',
   :description =>
     %{<p>
@@ -145,3 +146,7 @@ Product.create(:title => 'Network',
   :image_url => '/images/network.jpg',
   :price => 16)
 # . . .
+=======
+User.create(:name => 'dave', :password => 'secret',
+  :password_confirmation => 'secret')
+>>>>>>> 745ff94677d105948dc342a17dd1316ead821467

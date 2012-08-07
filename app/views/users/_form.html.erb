@@ -1,3 +1,5 @@
+<script type="text/javascript" src="/javascripts/check.js"></script>
+<p id="notice"><%= notice%></p>
 <div class = "depot_form">
   
 <%= form_for @user do |f| %>
@@ -16,20 +18,23 @@
   <fieldset>
   	<legend>Enter User Details</legend>
   	
-  	<div>
+  	<div id="ajaxdiv">
     	<%= f.label :name %><br />
-	    <%= f.text_field :name, :size => 40 %>
+	    <%= f.text_field :name, :size => 40, :id => "fname", :onkeyup => "showHint(this.value)"%>
+	    <span id="txtHint" ></span>
 	</div>
 	<div>
 	    <%= f.label :password, 'Password' %><br />
-	    <%= f.password_field :password, :size => 40 %>
+	    <%= f.password_field :password, :id => "pwd", :size => 40, :onkeyup => "checkPWD(this.value)" %>
+	    <span id="PWDHint" ></span>
 	</div>
 	<div>
 	    <%= f.label :password_confirmation, 'Confirm' %><br />
-	    <%= f.password_field :password_confirmation, :size => 40 %>
+	    <%= f.password_field :password_confirmation, :id => "pwd_confirm", :size => 40, :onkeyup => "pwdConfirm(this.value)" %>
+	    <span id="confirmHint" ></span>
 	</div>
 	<div>
-	    <%= f.submit %>
+	    <%= f.submit :id => "btnOK" %>
 	</div>
   </fieldset>
 <% end %>

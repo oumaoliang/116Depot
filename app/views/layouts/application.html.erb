@@ -36,7 +36,7 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
 			<% end %>
 
 			<a href="http://www...."><%= t('.home') %></a><br />
-			<a href="http://www..../faq"><%= t('.questions') %></a><br />
+			<a href=<%= questions_path %>><%= t('.questions') %></a><br />
 			<a href="http://www..../news"><%= t('.news') %></a><br />
 			<a href="http://www..../contact"><%= t('.contact') %></a><br />
 
@@ -49,8 +49,11 @@ options_for_select(LANGUAGES, I18n.locale.to_s),
 				<br />
 				<%= button_to'Logout',logout_path, :method=>:delete %>
 			<%end%>
-			<br /><br /><br /><br /><br />
-			<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes" title="µã»÷ÎÒ·¢ËÍÏûÏ¢"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> <a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Online service</a>
+			<div id="service">
+				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
+			 		title="ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
+			 		<a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Online service</a>
+			</div>
 		</div>
 		<div id="main">
 			<%= yield %>
