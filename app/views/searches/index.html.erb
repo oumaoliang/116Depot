@@ -4,6 +4,10 @@
 
 <h1>Search Results</h1>
 
+<% if @results.length == 0 %>
+<h5>Sorry,there are not such books!</h5>
+<% end %>
+
 <% @results.each do |product| %>
 	<div class="entry">
 		<%= image_tag(product.image_url) %>
