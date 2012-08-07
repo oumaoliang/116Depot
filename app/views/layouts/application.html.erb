@@ -13,6 +13,10 @@
 <!-- END:head -->
 <body id="store">
 	<div id="banner">
+	    <%= form_tag searches_path, :class=>'search', :method=>'get' do %>
+		<%= text_field_tag "q", params[:q] %>
+		<%= submit_tag "Search" %>
+		<% end %>
 		<%= image_tag("logo.png") %>
 		<%= @page_title || t('.title') %>
 		<%= form_tag store_path, :class => 'locale' do %>

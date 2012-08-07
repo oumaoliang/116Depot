@@ -73,3 +73,75 @@ Product.create(:title => 'story3',
   :image_url => '/images/story3.jpg',
   :price => 12.4)
 # . . .
+
+Product.create(:title => 'English for Grade3',
+  :description =>
+    %{<p>
+       This is a English book for grade 3 student
+      </p>},
+  :image_url => '/images/english1.jpg',
+  :price => 35.4)
+# . . .
+
+Product.create(:title => 'English for Grade2',
+  :description =>
+    %{<p>
+       This is a English book for grade 2 student
+      </p>},
+  :image_url => '/images/english2.jpg',
+  :price => 23)
+# . . .
+
+Product.create(:title => 'English for university',
+  :description =>
+    %{<p>
+      This is a English book for university students
+      </p>},
+  :image_url => '/images/english3.jpg',
+  :price => 18)
+# . . .
+
+Product.create(:title => 'English for teacher',
+  :description =>
+    %{<p>
+        This is a English book for university teachers
+      </p>},
+  :image_url => '/images/english4.jpg',
+  :price => 54.2)
+# . . .
+
+Product.create(:title => 'HTML5',
+  :description =>
+    %{<p>
+       Introduction to HTML5
+      </p>},
+  :image_url => '/images/HTML5.jpg',
+  :price => 16)
+# . . .
+
+Product.create(:title => 'introduction to China',
+  :description =>
+    %{<p>
+       Introduction to China
+      </p>},
+  :image_url => '/images/china.jpg',
+  :price => 45)
+# . . .
+
+Product.create(:title => 'Database',
+  :description =>
+    %{<p>
+       Introduction to database
+      </p>},
+  :image_url => '/images/database.jpg',
+  :price => 16)
+# . . .
+
+Product.create(:title => 'Network',
+  :description =>
+    %{<p>
+       Introduction to computer network
+      </p>},
+  :image_url => '/images/network.jpg',
+  :price => 16)
+# . . .
