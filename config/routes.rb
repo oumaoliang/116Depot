@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :comment_line_items
+
   resources :comments
 
   resources :questions
