@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :comments
+
   resources :questions
 
   get'admin'=> 'admin#index'
