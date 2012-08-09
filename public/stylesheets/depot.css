@@ -55,8 +55,13 @@ body {
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+  width:        150px;
+  height:       170px;
+}
+
+#product_list .detail_image{
+	width:   10px;
+	height:  6px;
 }
 
 #product_list .list_description {
