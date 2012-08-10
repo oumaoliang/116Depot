@@ -313,3 +313,6 @@ body {
 #languge_select {
 	float: right;
 }
+#bxComment {
+	width: 500px;
+}
