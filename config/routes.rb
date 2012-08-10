@@ -1,4 +1,7 @@
 Depot::Application.routes.draw do
+  get "news_store/index"
+
+  resources :news
   resources :comment_line_items
 
   resources :comments

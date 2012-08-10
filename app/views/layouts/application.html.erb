@@ -48,8 +48,7 @@
 
 			<a href="/"><%= t('.home') %></a><br />
 			<a href=<%= questions_path %>><%= t('.questions') %></a><br />
-			<a href="/404.html"><%= t('.news') %></a><br />
-			<a href="/404.html"><%= t('.contact') %></a><br />
+			<a href="news_store/index"><%= t('.news') %></a><br />
 
 			
 			<%if session[:user_id]%>
@@ -57,12 +56,14 @@
 				<%= link_to'Orders', orders_path %><br/>
 				<%= link_to'Products',products_path %><br/>
 				<%= link_to'Users', users_path %><br/>
+				<a href="/news"><%= t('.Operate News') %></a><br />
+
 				<br />
 				<%= button_to'Logout',logout_path, :method=>:delete ,:id => "btn_logout"%>
 			<%end%>
 			<div id="service">
 				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
-			 		title="腾讯QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
+			 		title="鑵捐QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
 			 		<a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Online service</a>
 			</div>
 		</div>
