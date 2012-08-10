@@ -1,4 +1,5 @@
 class CommentLineItemsController < ApplicationController
+  skip_before_filter :authorize, :only => [:index, :show, :new, :create]
   # GET /comment_line_items
   # GET /comment_line_items.xml
   def index
