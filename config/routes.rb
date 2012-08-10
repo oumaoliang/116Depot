@@ -1,4 +1,8 @@
 Depot::Application.routes.draw do
+  get "news_store/index"
+
+  resources :news
+
   get'admin'=> 'admin#index'
     
   controller :sessions do
