@@ -55,8 +55,13 @@ body {
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+  width:        150px;
+  height:       170px;
+}
+
+#product_list .detail_image{
+	width:   10px;
+	height:  6px;
 }
 
 #product_list .list_description {
@@ -148,11 +153,12 @@ body {
 	border-bottom: 2px solid;
 	font:small-caps 40px/40px "Time New Roman", serif;
 	color: #282;
-	text-align: center;
+	width: 100%;
+	height: 50px;
 }
-#banner img {
+/*#banner img {
 	float:left;
-}
+}*/
 #columns {
 	background: #141;
 }
@@ -214,3 +220,96 @@ body {
 	margin: -0.25em 0.1em;
 }
 
+/*.search {
+	float: right;
+    padding-top: 0.2em;
+    padding-right: 0.5em;
+    margin-right: 200px;
+}*/
+
+#service {
+	margin-top:50px;
+}
+
+/*styles for questions/index */
+#question_list{
+	width :900px;
+	margin:auto;
+}
+
+#question_list h1{
+	height: 50px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#question_list img{
+	width: 100px;
+	height: 150px;
+	margin: 3em 1em;
+}
+
+#question_list #one_question{
+	margin:1em;
+	border: double 3px #CCCCCC;
+	padding-bottom: 1em;
+	clear:left;
+	overflow:hidden;
+}
+
+#question_list #one_question #left_banner{
+	width: 15%;
+	float: left;
+	background:#F0F0F0;
+	padding:1em;
+	margin:0px;
+}
+
+#question_list #one_question #content{
+	float:right;
+	width:80%;
+}
+
+#question_list #one_question #content #title{
+	border:dotted 1px gray;
+	background:#E0F8F8;
+	font-size:medium;
+	font-weight:bolder;
+}
+#question_list #one_question #content #description{
+	margin: 15px;	
+}
+
+#question_list #one_question #content .question_labels{
+	float:left;
+	width:100px;
+	font-weight: bolder;
+}
+
+#question_list #one_question #content p{
+	margin-left:3em;	
+	clear:left;
+}
+#comment_content {
+	width:70%;
+	background-color: white;
+	margin-top:10px;
+}
+#hidden_product_id, #hidden_comment_id {
+	display:none;
+}
+#side input {
+	width: 80px;
+}
+.search_input {
+	width: 500px;
+}
+#banner_right_side {
+	width:600px; float:left;
+}
+#logo_pic {
+	width: 400px; float:left;
+}
+#languge_select {
+	float: right;
+}

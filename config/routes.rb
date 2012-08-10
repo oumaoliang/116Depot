@@ -1,7 +1,15 @@
 Depot::Application.routes.draw do
+<<<<<<< HEAD
   get "news_store/index"
 
   resources :news
+=======
+  resources :comment_line_items
+
+  resources :comments
+
+  resources :questions
+>>>>>>> 9d616a587bc0ca90380db58a685409f68ff60ba8
 
   get'admin'=> 'admin#index'
     
@@ -27,6 +35,8 @@ Depot::Application.routes.draw do
   resources :line_items
 
   resources :carts
+  
+  resources :searches
 
   #get "store/index"
 
@@ -92,5 +102,5 @@ Depot::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  
+  match '*a', :to => 'errors#routing'
 end

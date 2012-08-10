@@ -7,7 +7,10 @@ hnspi
 shgiohgajg
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 branch test
 =======
 wjgdgg fff
 >>>>>>> 454064764e22c7f781d79a1d325940588057ee8c
+>>>>>>> 745ff94677d105948dc342a17dd1316ead821467

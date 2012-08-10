@@ -1,0 +1,38 @@
+<div id="question_list">
+	<h1>Leave your questions here</h1>
+
+	<%= link_to 'My own Question', new_question_path%>
+	<% index = 0; @questions.each do |question| %>
+		<div id="one_question">
+			<div id="left_banner">
+				<%= image_tag("/images/default.png") %>
+			</div>
+		
+			<div id="content">
+				<div id="title">
+					<%= "Q"+(index+=1).to_s+" #{question.title}"%>
+				</div>
+				
+				<div id="description">
+					<label><span class="question_labels">Qeustion:</span>
+						<p><%= question.description %></p>
+					</label>
+					<% if question.answer&&!question.answer.empty? %>
+						<label><span class="question_labels">Answer:</span>
+							<p><%= question.answer %></p>
+						</label>
+					<% end %>
+					
+					<% if !question.answer || question.answer.empty? %>
+						<br />
+						<br /> 
+						<%= link_to 'Let me answer it', edit_question_path(question) %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<br />
+	<br />
+	<br />
+</div>

@@ -4,7 +4,7 @@ function showHint(str)
 	document.getElementById("btnOK").disabled = true;
 	var xmlhttp;
 	var name = str;
-	var reg_express = /^[a-zA-Z]+\d*$/;
+	var reg_express = /^[a-zA-Z]+\d*/;
 	var str_pwd = document.getElementById("pwd").value;
 	var str_pwdConfirm = document.getElementById("pwd_confirm").value;
 	if (str == "") {

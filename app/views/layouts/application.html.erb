@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag '/images/web_logo.ico'%>
   <title>Pragprog Books Online Store</title>
 <!-- START_HIGHLIGHT -->
   <%= stylesheet_link_tag "scaffold" %>
@@ -13,15 +14,29 @@
 <!-- END:head -->
 <body id="store">
 	<div id="banner">
-		<%= image_tag("logo.png") %>
-		<%= @page_title || t('.title') %>
-		<%= form_tag store_path, :class => 'locale' do %>
-		<%= select_tag 'set_locale',
+		<div id="logo_pic">
+			<%= image_tag("logo.png") %>
+			<%= @page_title || t('.title') %>
+		</div>
+		<div id="banner_right_side">
+		    <%= form_tag searches_path, :class=>'search', :method=>'get' do %>
+			<%= text_field_tag "q", params[:q], :class => "search_input" %>
+			<%= submit_tag "Search" %>
+			<% end %>
+			
+			<!--
+			<%= submit_tag 'submit' %>
+			-->
+			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+			<%= form_tag store_path, :class => 'locale' do %>			
+			<% end %>
+		</div>
+		<div id="languge_select">
+			<%= select_tag 'set_locale',
 			options_for_select(LANGUAGES, I18n.locale.to_s),
-				:onchange => 'this.form.submit()' %>
-		<%= submit_tag 'submit' %>
-		<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
-		<% end %>
+			:onchange => 'this.form.submit()'%>
+		</div>
+		
 	</div>
 	<div id="columns">
 		<div id="side">
@@ -34,11 +49,6 @@
 			<%=link_to'home',store_path%><br />	
 			<a href="http://www..../faq"><%= t('.questions') %></a><br />
 			<a href="news_store/index"><%= t('.news') %></a><br />
-			<div id="service">
-				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
-			 		title="锟斤拷锟斤拷曳锟斤拷锟斤拷锟较�><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
-			 		<a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Contact</a>
-			</div>
 
 			
 			
@@ -50,8 +60,14 @@
 				<a href="/news"><%= t('.Operate News') %></a><br />
 				
 				<br />
-				<%= button_to'Logout',logout_path, :method=>:delete %>
+				<%= button_to'Logout',logout_path, :method=>:delete ,:id => "btn_logout"%>
 			<%end%>
+
+			<div id="service">
+				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
+			 		title="腾讯QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
+			 		<a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Online service</a>
+			</div>
 
 		</div>
 		<div id="main">
