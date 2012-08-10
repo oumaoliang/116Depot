@@ -12,6 +12,7 @@ Product.create(:title => 'Web Design for Developers',
         all the way to implementation.
       </p>},
   :image_url =>   '/images/wd4d.jpg',    
+  :score => 3,
   :price => 42.95)
 # . . .
 Product.create(:title => 'Programming Ruby 1.9',
@@ -22,6 +23,7 @@ Product.create(:title => 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   :image_url => '/images/ruby.jpg',
+  :score => 2,
   :price => 49.50)
 # . . .
 
@@ -36,113 +38,126 @@ Product.create(:title => 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   :image_url => '/images/rtp.jpg',
+  :score => 1,
   :price => 43.75)
   
   Product.create(:title => 'C++',
   :description =>
     %{<p>
-        C++ prime
+        C++ prime.The book mainly teach you the C++ language, how to use C++, and so on
       </p>},
   :image_url => '/images/c.jpg',
+  :score => 4,
   :price => 45.0)
 # . . .
 
 Product.create(:title => 'story',
   :description =>
     %{<p>
-        story
+        This is a story book. In this book you will learn many intrsting stories,which makes you happy.
       </p>},
   :image_url => '/images/story1.jpg',
+  :score => 1,
   :price => 23.2)
 # . . .
 
 Product.create(:title => 'story2',
   :description =>
     %{<p>
-       story2
+       This is a story book. In this book you will learn many intrsting stories,which makes you happy.
       </p>},
   :image_url => '/images/story2.jpg',
+  :score => 5,
   :price => 45.2)
 # . . .
 
 Product.create(:title => 'story3',
   :description =>
     %{<p>
-       story3
+       This is a story book. In this book you will learn many intrsting stories,which makes you happy.
       </p>},
   :image_url => '/images/story3.jpg',
+  :score => 3,
   :price => 12.4)
 # . . .
 
 Product.create(:title => 'English for Grade3',
   :description =>
     %{<p>
-       This is a English book for grade 3 student
+       This is a English book for grade 3 student. This is a English book for grade 3 student
       </p>},
   :image_url => '/images/english1.jpg',
+  :score => 2,
   :price => 35.4)
 # . . .
 
 Product.create(:title => 'English for Grade2',
   :description =>
     %{<p>
-       This is a English book for grade 2 student
+       This is a English book for grade 2 student.This is a English book for grade 2 student
       </p>},
   :image_url => '/images/english2.jpg',
+  :score => 4,
   :price => 23)
 # . . .
 
 Product.create(:title => 'English for university',
   :description =>
     %{<p>
-      This is a English book for university students
+      This is a English book for university students.This is a English book for university students
       </p>},
   :image_url => '/images/english3.jpg',
+  :score => 5,
   :price => 18)
 # . . .
 
 Product.create(:title => 'English for teacher',
   :description =>
     %{<p>
-        This is a English book for university teachers
+        This is a English book for university teachers. This is a English book for university teachers.
       </p>},
   :image_url => '/images/english4.jpg',
+  :score => 4,
   :price => 54.2)
 # . . .
 
 Product.create(:title => 'HTML5',
   :description =>
     %{<p>
-       Introduction to HTML5
+       Introduction to HTML5.this book will tell you how to learn html5
       </p>},
   :image_url => '/images/HTML5.jpg',
+  :score => 2,
   :price => 16)
 # . . .
 
 Product.create(:title => 'introduction to China',
   :description =>
     %{<p>
-       Introduction to China
+       Introduction to China.We will tell you the truth about china, chinese people,chinese food...
       </p>},
   :image_url => '/images/china.jpg',
+  :score => 1,
   :price => 45)
 # . . .
 
 Product.create(:title => 'Database',
   :description =>
     %{<p>
-       Introduction to database
+       Introduction to database.Data is more an more important in our daily life, the database is the ..
       </p>},
   :image_url => '/images/database.jpg',
+  :score => 3,
   :price => 16)
 # . . .
 
 Product.create(:title => 'Network',
   :description =>
     %{<p>
-       Introduction to computer network
+       Introduction to computer network.The protocal TCP ,IP ,The HTTP, POP3, SMTP, FTP etc
       </p>},
   :image_url => '/images/network.jpg',
+  :score => 5,
   :price => 16)
 # . . .
 

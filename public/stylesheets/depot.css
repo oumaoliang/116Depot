@@ -313,7 +313,7 @@ body {
 	width: 40%; float:left;
 }
 #languge_select {
-	float: right;
+	float: right; margin-top: 0px;
 }
 #bxComment {
 	width: 500px;
