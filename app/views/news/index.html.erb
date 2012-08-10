@@ -1,0 +1,32 @@
+<div id="product_list">
+  <h1>Listing news</h1>
+
+  <table>
+  <% @news.each do |new| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+      <td class="list_description">
+        <dl>
+          <dt><%= new.title %></dt>
+          <dd><%= truncate(strip_tags(new.detail),
+                 :length => 80) %></dd>
+        </dl>
+      </td>
+
+      <td class="list_actions">
+        <%= link_to 'Show', new %><br/>
+        <%= link_to 'Edit', edit_news_path(new) %><br/>
+        <%= link_to 'Destroy', new, 
+                    :confirm => 'Are you sure?',
+                    :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<br />
+
+
+
+<%= link_to 'New news', new_news_path %>

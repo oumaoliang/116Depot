@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  skip_before_filter :authorize, :only => [:index, :show, :new, :create]
   # GET /questions
   # GET /questions.xml
   def index
