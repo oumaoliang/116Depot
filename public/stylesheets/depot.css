@@ -302,14 +302,17 @@ body {
 	width: 80px;
 }
 .search_input {
-	width: 500px;
+	width: 50%;
 }
 #banner_right_side {
-	width:600px; float:left;
+	width:50%; float:left;
 }
 #logo_pic {
-	width: 400px; float:left;
+	width: 40%; float:left;
 }
 #languge_select {
 	float: right;
+}
+#bxComment {
+	width: 500px;
 }

@@ -1,15 +1,12 @@
 Depot::Application.routes.draw do
-<<<<<<< HEAD
   get "news_store/index"
 
   resources :news
-=======
   resources :comment_line_items
 
   resources :comments
 
   resources :questions
->>>>>>> 9d616a587bc0ca90380db58a685409f68ff60ba8
 
   get'admin'=> 'admin#index'
     
