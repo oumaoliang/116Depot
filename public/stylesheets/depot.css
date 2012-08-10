@@ -302,10 +302,12 @@ body {
 	width: 80px;
 }
 .search_input {
-	width: 50%;
+	width: 98%;
 }
 #banner_right_side {
-	width:50%; float:left;
+	height: 67px; width:50%; float:left; margin-top: 10px;
+/*	background-image: url(../images/search_box.png); 
+	background-repeat: no-repeat;*/
 }
 #logo_pic {
 	width: 40%; float:left;
@@ -315,4 +317,14 @@ body {
 }
 #bxComment {
 	width: 500px;
+}
+#div_search_input {
+	float: left; width: 80%;
+}
+.btn_search {
+	background-image: url(../images/12.gif); background-color: #282; border-style:none;
+	width: 74px; 
+}
+#div_search_submit {
+	float: left;
 }

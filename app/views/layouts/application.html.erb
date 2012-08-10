@@ -19,9 +19,13 @@
 			<%= @page_title || t('.title') %>
 		</div>
 		<div id="banner_right_side">
-		    <%= form_tag searches_path, :class=>'search', :method=>'get' do %>
-			<%= text_field_tag "q", params[:q], :class => "search_input" %>
-			<%= submit_tag "Search" %>
+			<div id="div_search_input">
+		    	<%= form_tag searches_path, :class=>'search', :method=>'get' do %>
+				<%= text_field_tag "q", params[:q], :class => "search_input" %>
+			</div>
+			<div id="div_search_submit">
+				<%= submit_tag "", :class => "btn_search" %>
+			</div>
 			<% end %>
 			
 			<!--

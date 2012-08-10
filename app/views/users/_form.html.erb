@@ -1,5 +1,7 @@
 <script type="text/javascript" src="/javascripts/check.js"></script>
-<p id="notice"><%= notice%></p>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
 <div class = "depot_form">
   
 <%= form_for @user do |f| %>
