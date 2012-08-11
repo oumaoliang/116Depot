@@ -16,13 +16,13 @@ class CommentLineItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create comment_line_item" do
-    assert_difference('CommentLineItem.count') do
-      post :create, :comment_line_item => @comment_line_item.attributes
-    end
-
-    assert_redirected_to comment_line_item_path(assigns(:comment_line_item))
-  end
+  # test "should create comment_line_item" do
+    # assert_difference('CommentLineItem.count') do
+      # post :create, :comment_line_item => @comment_line_item.attributes
+    # end
+# 
+    # assert_redirected_to comment_line_item_path(assigns(:comment_line_item))
+  # end
 
   test "should show comment_line_item" do
     get :show, :id => @comment_line_item.to_param

@@ -47,10 +47,11 @@ class CommentLineItemsController < ApplicationController
   # POST /comment_line_items.xml
   def create
     @comment_line_item = CommentLineItem.new(params[:comment_line_item])
-
+    productId = @comment_line_item.product_id
     respond_to do |format|
       if @comment_line_item.save
-        format.html { redirect_to(@comment_line_item, :notice => 'Comment line item was successfully created.') }
+        #format.html { redirect_to(@comment_line_item, :notice => 'Comment line item was successfully created.') }
+        format.html { redirect_to(product_path(:id => productId), :method => :get) }
         format.xml  { render :xml => @comment_line_item, :status => :created, :location => @comment_line_item }
       else
         format.html { render :action => "new" }

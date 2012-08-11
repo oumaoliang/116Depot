@@ -1,0 +1,44 @@
+<style type="text/css">
+	#bxComment {
+		height: 120px; width: 90%; 
+	}
+	#content_label {
+		margin-top: 50px;
+	}
+</style>
+
+<script type="text/javascript">
+	function check_before_submit(str) {
+		if (str == "")	return false;
+	}
+</script>
+
+<%= form_for(@comment_line_item) do |f| %>
+  <% if @comment_line_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment_line_item.errors.count, "error") %> prohibited this comment_line_item from being saved:</h2>
+
+      <ul>
+      <% @comment_line_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.text_field :product_id, :value => @product.id,  :id => "hidden_product_id"%>
+  </div>
+  <div class="field">
+
+    <%= f.text_field :comment_id, :value => @product.id , :id => "hidden_comment_id" %>
+  </div>
+  <div class="field">
+    <%= f.label "write down you comment here.", :id => "content_label"%><br />
+    <%= f.text_area :cmContent, :id => "bxComment"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit :value => "create comment", :onclick => "return check_before_submit(bxComment.value)" %>
+  </div>
+<% end %>

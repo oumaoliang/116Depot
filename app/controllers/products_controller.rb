@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_filter :authorize, :only => [:index, :show]
   # GET /products
   # GET /products.xml
   def index
@@ -13,8 +14,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    @comment_line_item = CommentLineItem.new
     @product = Product.find(params[:id])
-
+    product_id = params[:id]
+    @comments = CommentLineItem.where(:product_id => product_id).all
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }

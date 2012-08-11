@@ -1,31 +1,60 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
+<style type="text/css">
+	#product_detail img {
+		float: left; padding-right:20px; width: 120px; height:auto;
+	}
+	#each_comment {
+		border-style:solid; border-width:1px; border-color:#87CEFF; height: 150px; margin-top:5px;
+	}
+	#each_comment_content img {
+		float: left; padding-right: 12px;
+	}
+	#each_comment_tile {
+		margin-top: 110px; margin-left: 132px;
+	}
+</style>
+<div id="product_detail">
+	<img src="<%= @product.image_url %>" />
+	<p>
+	<b>Title:</b>
+	  <%= @product.title %>
+	</p>
+	<p>
+  	<b>Price:</b>
+  	  <%= number_to_currency(@product.price) %>
+	</p>
+	<p>
+  	<b>Score:</b>
+  	  <%= @product.score %>
+	</p>
+	<b>Description:</b>
+	  <%= sanitize @product.description %>
+	</p>
+	<p>
+</div>
+<div style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
 
-<p>
-  <b>Title:</b>
-  <%= @product.title %>
-</p>
+<div id="comment_list_detail">
+	<h3>Customer Reviews</h3>
+	<% @comments.each do |comment|%>
+		<div id="each_comment">
+			<div id="each_comment_content">
+				<img src="/images/15.jpg" />
+				<%= comment.cmContent%>
+			</div>
+			<div id="each_comment_tile">
+				posted at: <%= comment.created_at%>
+			</div>
+		</div>
+	<% end %>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+<%= render 'commentform' %>
 
-<p>
-  <b>Image url:</b>
-  <%= @product.image_url %>
-</p>
+<%if session[:user_id]%>
+	<%= link_to 'Edit', edit_product_path(@product) %> |
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Score:</b>
-  <%= @product.score %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+	<%= link_to 'Back', products_path()%>
+<% end %>
