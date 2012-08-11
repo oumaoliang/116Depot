@@ -305,12 +305,12 @@ body {
 	width: 98%;
 }
 #banner_right_side {
-	height: 67px; width:50%; float:left; margin-top: 10px;
+	height: 67px; width:40%; float:left; margin-top: 10px;
 /*	background-image: url(../images/search_box.png); 
 	background-repeat: no-repeat;*/
 }
 #logo_pic {
-	width: 40%; float:left;
+	width: 50%; float:left;
 }
 #languge_select {
 	float: right; margin-top: 0px;

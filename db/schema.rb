@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20120810045729) do
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "score"   :default => 3
+    t.integer  "score"
   end
 
   create_table "questions", :force => true do |t|

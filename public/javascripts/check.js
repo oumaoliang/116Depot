@@ -4,7 +4,7 @@ function showHint(str)
 	document.getElementById("btnOK").disabled = true;
 	var xmlhttp;
 	var name = str;
-	var reg_express = /^[a-zA-Z]+\d*/;
+	var reg_express = /^[a-zA-Z]+(\d*[a-zA-Z]*)*$/;
 	var str_pwd = document.getElementById("pwd").value;
 	var str_pwdConfirm = document.getElementById("pwd_confirm").value;
 	if (str == "") {
@@ -13,7 +13,7 @@ function showHint(str)
 		return;
 	}
 	if (!reg_express.test(str)) {
-		document.getElementById("txtHint").innerHTML="* invalid name, it must begin with a letter.";
+		document.getElementById("txtHint").innerHTML="* invalid characters(only digits and letters), or you must begin with a letter,eg. dave123.";
 		document.getElementById("txtHint").style.color = "red";
 		return;
 	}
