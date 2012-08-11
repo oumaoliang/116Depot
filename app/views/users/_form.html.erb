@@ -22,7 +22,8 @@
   	
   	<div id="ajaxdiv">
     	<%= f.label :name %><br />
-	    <%= f.text_field :name, :size => 40, :id => "fname", :onkeyup => "showHint(this.value)"%>
+	    <%= f.text_field :name, :size => 40, :id => "fname", :onchange => "showHint(this.value)",
+	     :onkeyup => "showHint(this.value)"%>
 	    <span id="txtHint" ></span>
 	</div>
 	<div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>admin's guide</title>
+  <style type="text/css">
+  	body {
+  		margin:0 auto;
+  	}
+  	#main {
+  		margin:0 auto;
+  	}
+  	#banner {
+  		height:74px;  background-color:#99CC99; border-bottom-style:solid; border-bottom-width:2px;
+  		border-bottom-color:#141;
+  	}
+  	#list_title {
+  		margin-top:20px;
+  	}
+  	#admin_access {
+  		float: left; width:15%; margin-top: 30px;
+  	}
+  	#logo_pic {
+  		width: 80%; float: left;
+  	}
+  	#main_content {
+  		width: 90%; margin: 0 auto;
+  	}
+  	#list_title table tr td {
+  		padding: 30px;
+  	}
+  	#detail {
+  		margin-top:30px;
+  	}
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/userguide.html -->
+  <div id="main">
+  		<div id="banner">
+		<div id="logo_pic">
+			<img src="../images/logo.png" style="margin-top: 10px;" />
+			<h2 style="display: inline; color: #282; font-family: serif">Pragmatic BookShelf Help Center</h2>
+		</div>
+		<div id="admin_access"><a href="/userguide.html">用户帮助</a></div>
+		</div>
+		
+		<div id="main_content">
+	  	<div id="list_title">
+	  		<table>
+	  			<tr>
+	  				<td style="padding-left: 0"><a href="#ct1">1.登录到管理员页面</a></td><td><a href="#ct2">2.登录以后的管理页面</a></td>
+	  				<td><a href="#ct3">3.如何查看订单</a></td><td><a href="#ct4">4.如何添加商品</a></td>
+	  				<td><a href="#ct5">5.如何添加用户</a></td><td><a href="#ct6">6.如何退出</a></td>
+	  			</tr>
+	  		</table>
+	  	</div>
+	  	<div id="detail">
+	  		<div id="ct1">
+	  			<h3>1.登录到管理员页面</h3>
+	  			<p>回到主页，在浏览器的地址栏的地址后面添加/users即可跳转到登录页面。
+	  				管理员的用户名和密码是事先分配的。您可以通过分配给您的用户名和密码登录到管理员页面进行管理员的操作。
+					以下所有需填写部分，都做了数据效验，输入不合法数据会在上方提示出来，为了不浪费填写着时间，请认真填写。<br />
+				登陆界面：</p>
+				<img src="../images/7.png" />
+	  		</div>
+	  		<div id="ct2">
+	  			<h3>2. 登录以后的管理页面</h3>
+	  			<p>当管理员成功登陆后即可看见下面的页面，如登录失败，则还会停留在登陆界面，并且会给出相应的提示。</p>
+	  			<img src="../images/8.png" /><br />
+	  		</div>
+	  		<div id="ct3">
+	  			<h3>3.如何查看订单</h3>
+	  			<p>在您的左边是导航栏，单击第五个选择（order）就可查看订单。在进入查看订单界面时，可以对订单就行详细查看，可以修改订单，还可以删除订单等操作。</p>
+	  			<img src="../images/9.png" /><br />
+	  			<p>现在订单为空，如果有订单，您可以在此页面进行查看订单，修改订单，创建订单和销毁订单的操作。</p>
+	  			<img src="../images/10.png" />
+	  		</div>
+	  		<div id="ct4">
+	  			<h3>4.如何添加商品</h3>
+	  			<p>单击左边products按钮，即可进入添加商品页面，在商品页面中，可以添加商品，查看商品，修改商品和删除商品的操作。</p>
+	  			<img src="../images/11.png" /><br />
+	  			<p>正如您所见，在此页面，您可以查看某一本书的信息，编辑书本的信息甚至可以删除某一本书。在页面的底部可以看到添加新书籍的入口：</p>
+	  			<img src="../images/12.png" />
+	  		</div>
+	  		<div id="ct5">
+	  			<h3>5.如何添加用户</h3>
+	  			<p>左边的第七个按钮是，用户管理。单击进入用户管理界面，在该页面中，可添加新的的用户，查看用户详细信息，修改用户信息，删除用户等。</p>
+	  			<img src="../images/13.png" /><br />
+	  			<p>用户添加页面:</p>
+	  			<img src="../images/14.png" />
+	  		</div>
+	  		<div id="ct6">
+	  			<h3>6.如何退出登录</h3>
+	  			<p>如果您已经登录，那么在左侧栏中您将可以看到一个logout的按钮，点击此按钮退出。</p>
+	  		</div>
+	  	</div>
+	  	</div>
+  </div>
+</body>
+</html>

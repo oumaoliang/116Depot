@@ -40,7 +40,6 @@
 			options_for_select(LANGUAGES, I18n.locale.to_s),
 			:onchange => 'this.form.submit()'%>
 		</div>
-		
 	</div>
 	<div id="columns">
 		<div id="side">
@@ -52,8 +51,11 @@
 
 			<a href="/"><%= t('.home') %></a><br />
 			<a href=<%= questions_path %>><%= t('.questions') %></a><br />
-			<a href="news_store/index"><%= t('.news') %></a><br />
-
+			<a href="/news_store/index"><%= t('.news') %></a><br />
+			
+			<div id="aboutsite">
+				<a href="/userguide.html">about</a>
+			</div>
 			
 			<%if session[:user_id]%>
 				<br />

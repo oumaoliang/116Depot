@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>user's guide</title>
+  <style type="text/css">
+  	body {
+  		margin:0 auto;
+  	}
+  	#main {
+  		margin:0 auto;
+  	}
+  	#banner {
+  		height:74px;  background-color:#99CC99; border-bottom-style:solid; border-bottom-width:2px;
+  		border-bottom-color:#141;
+  	}
+  	#list_title {
+  		margin-top:20px;
+  	}
+  	#admin_access {
+  		float: left; width:15%; margin-top: 30px;
+  	}
+  	#logo_pic {
+  		width: 80%; float: left;
+  	}
+  	#main_content {
+  		width: 90%; margin: 0 auto;
+  	}
+  	#list_title table tr td {
+  		padding: 30px;
+  	}
+  	#detail {
+  		margin-top:30px;
+  	}
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/userguide.html -->
+  <div id="main">
+  		<div id="banner">
+		<div id="logo_pic">
+			<img src="../images/logo.png" style="margin-top: 10px;" />
+			<h2 style="display: inline; color: #282; font-family: serif">Pragmatic BookShelf Help Center</h2>
+		</div>
+		<div id="admin_access"><a href="/adminguide.html">管理员帮助</a></div>
+		</div>
+		
+		<div id="main_content">
+	  	<div id="list_title">
+	  		<table>
+	  			<tr>
+	  				<td style="padding-left: 0"><a href="#ct1">1.浏览页面</a></td><td><a href="#ct2">2.添加书目</a></td>
+	  				<td><a href="#ct3">3.清空购物车</a></td><td><a href="#ct4">4.结账买单</a></td>
+	  			</tr>
+	  		</table>
+	  	</div>
+	  	<div id="detail">
+	  		<div id="ct1">
+	  			<h3>1.	浏览页面</h3>
+				拖动右侧滚动条，即可浏览书目。滚动到网页的底部可以使用分页来查看更多的书籍。如下图所示：<br/>
+				<img src="../images/1.png" />
+	  		</div>
+	  		<div id="ct2">
+	  			<h3>2.	添加书目</h3>
+	  			点击需要购买的书籍下方的add to Cart 按钮，如要添加C++这本书，<br />
+	  			<img src="../images/2.png" /><br />
+	  			添加成功后，将在页面左侧显示购物车内容：<br />
+	  			<img src="../images/3.png" /><br />
+	  			如需要继续添加商品，重复上述操作即可.
+	  		</div>
+	  		<div id="ct3">
+	  			<h3>3.	清空购物车</h3>
+	  			如果想要清空购物车中的内容，点击左侧栏Empty cart 按钮，出现询问按钮，点击确定，即可清空购物车。清空后，原购物车不再显示。<br />
+	  			<img src="../images/4.png" />
+	  		</div>
+	  		<div id="ct4">
+	  			<h3>4.	结账买单</h3>
+	  			点击左侧栏的<img src="../images/5.png" /> 按钮，进入结账页面，输入订单信息即可点击提交订单。页面如下：<br />
+	  			<img src="../images/6.png" />
+	  		</div>
+	  	</div>
+	  	</div>
+  </div>
+</body>
+</html>
