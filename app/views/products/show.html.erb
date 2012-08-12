@@ -14,6 +14,9 @@
 	#each_comment_tile {
 		margin-top: 110px; margin-left: 132px;
 	}
+	#delete_comment {
+		float: right;
+	}
 </style>
 <div id="product_detail">
 	<img src="<%= @product.image_url %>" />
@@ -43,6 +46,11 @@
 			<div id="each_comment_content">
 				<img src="/images/15.jpg" />
 				<%= comment.cmContent%>
+				<%if session[:user_id]%>
+					<div id="delete_comment">
+						<%= link_to 'Destroy', comment, :confirm => "Are you sure?", :method => :delete %>
+					</div>
+				<% end %>
 			</div>
 			<div id="each_comment_tile">
 				posted at: <%= comment.created_at%>

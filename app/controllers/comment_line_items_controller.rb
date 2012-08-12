@@ -80,10 +80,11 @@ class CommentLineItemsController < ApplicationController
   # DELETE /comment_line_items/1.xml
   def destroy
     @comment_line_item = CommentLineItem.find(params[:id])
+    productId = @comment_line_item.product_id
     @comment_line_item.destroy
-
     respond_to do |format|
-      format.html { redirect_to(comment_line_items_url) }
+      # format.html { redirect_to(comment_line_items_url) }
+      format.html { redirect_to(product_path(:id => productId), :method => :get) }
       format.xml  { head :ok }
     end
   end

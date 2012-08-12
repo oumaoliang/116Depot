@@ -39,11 +39,11 @@ class CommentLineItemsControllerTest < ActionController::TestCase
     assert_redirected_to comment_line_item_path(assigns(:comment_line_item))
   end
 
-  test "should destroy comment_line_item" do
-    assert_difference('CommentLineItem.count', -1) do
-      delete :destroy, :id => @comment_line_item.to_param
-    end
-
-    assert_redirected_to comment_line_items_path
-  end
+  # test "should destroy comment_line_item" do
+    # assert_difference('CommentLineItem.count', -1) do
+      # delete :destroy, :id => @comment_line_item.to_param
+    # end
+# 
+    # assert_redirected_to comment_line_items_path
+  # end
 end
