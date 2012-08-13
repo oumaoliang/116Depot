@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @comment_line_item = CommentLineItem.new
+    @subjects = Subject.all
     @product = Product.find(params[:id])
     product_id = params[:id]
     @comments = CommentLineItem.where(:product_id => product_id).all
@@ -28,7 +29,7 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
-
+    @subjects = Subject.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
@@ -38,13 +39,14 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @subjects = Subject.all
   end
 
   # POST /products
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
-
+    @subjects = Subject.all
     respond_to do |format|
       if @product.save
         format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
@@ -60,7 +62,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
-
+    @subjects = Subject.all
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
@@ -86,6 +88,7 @@ class ProductsController < ApplicationController
   
   def who_bought
     @product = Product.find(params[:id])
+    @subjects = Subject.all
     respond_to do |format|
       format.atom
       format.xml{ render :xml => @product }

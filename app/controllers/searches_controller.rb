@@ -12,5 +12,4 @@ class SearchesController < ApplicationController
        format.xml  { render :xml => @results }
     end
    end
- 
 end

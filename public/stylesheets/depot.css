@@ -29,6 +29,11 @@ body {
         color: #226;
         border-bottom: 3px dotted #77d;
 }
+#store h5 {
+        font:  100% sans-serif;
+        color: #00ffff;
+        border-bottom: 2px ;
+}
 
 #store .cart_title{
 	font: 120% bold;

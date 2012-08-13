@@ -56,6 +56,18 @@
 			<div id="aboutsite">
 				<a href="/userguide.html" target="_blank">about</a>
 			</div>
+			<br/>
+			
+			<div>
+				<% @categories.each do |c| %>
+				  <h5><%= c.cat %></h5>
+				    <% @subjects.each do |s|%>
+				      <% if s.pid == c.cat %>
+				       <%= link_to s.sub, s %><br/>
+				      <% end %>
+				    <% end %>
+				<% end %>
+			</div>
 			
 			<%if session[:user_id]%>
 				<br />
