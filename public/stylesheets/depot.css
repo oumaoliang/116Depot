@@ -107,6 +107,7 @@ body {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #77d;
+  margin-left: 60px;
 }
 
 #store  .title {
@@ -116,11 +117,14 @@ body {
 
 #store .entry img {
   width: 80px;
+  height: auto;
   margin-right: 5px;
   margin-bottom: 5px;
   float: left;
 }
-
+#paging {
+	margin-top: 30px; margin-left: 30%; margin-bottom: 40px;
+}
 
 #store .entry h3 {
  margin-top: 0;
@@ -159,13 +163,13 @@ body {
 	font:small-caps 40px/40px "Time New Roman", serif;
 	color: #282;
 	width: 100%;
-	height: 50px;
+	height: 70px;
 }
 /*#banner img {
 	float:left;
 }*/
 #columns {
-	background: #141;
+	background: #141; /*width: 80%; margin:0 auto;*/
 }
 #main {
 	margin-left: 15em;
@@ -306,29 +310,29 @@ body {
 #side input {
 	width: 80px;
 }
-.search_input {
-	width: 98%;
-}
 #banner_right_side {
-	height: 67px; width:40%; float:left; margin-top: 10px;
+	width:40%; float:left; margin-top: 35px;
 /*	background-image: url(../images/search_box.png); 
 	background-repeat: no-repeat;*/
 }
 #logo_pic {
-	width: 50%; float:left;
+	width: 30%; float:left; margin-left: 10%; margin-top: 30px;
+}
+#logo_pic img {
+	width: 40%;
 }
 #languge_select {
-	float: right; margin-top: 0px;
+	float: left; width: 20%;
 }
 #bxComment {
 	width: 500px;
 }
-#div_search_input {
-	float: left; width: 80%;
+.search_input {
+	float: left; width: 70%; height: 25px;
 }
 .btn_search {
-	background-image: url(../images/12.gif); background-color: #282; border-style:none;
-	width: 74px; 
+	/*background-image: url(../images/12.gif); */background-color: #282; border-style:none;
+	width: 23%; float: left; height: 30px; color: white; font-weight: bold;
 }
 #div_search_submit {
 	float: left;

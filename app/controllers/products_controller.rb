@@ -18,7 +18,9 @@ class ProductsController < ApplicationController
     @subjects = Subject.all
     @product = Product.find(params[:id])
     product_id = params[:id]
-    @comments = CommentLineItem.where(:product_id => product_id).all
+    @comments = CommentLineItem.where(:product_id => product_id).order("created_at desc").paginate :page=>params[:page],
+     :per_page => 5
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
