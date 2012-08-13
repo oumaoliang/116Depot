@@ -17,6 +17,9 @@
 	#delete_comment {
 		float: right;
 	}
+	#page_link {
+		margin-left: 30%;
+	}
 </style>
 <div id="product_detail">
 	<img src="<%= @product.image_url %>" />
@@ -58,7 +61,7 @@
 		</div>
 	<% end %>
 </div>
-
+<div id="page_link"> <%= will_paginate @comments %> </div>
 <%= render 'commentform' %>
 
 <%if session[:user_id]%>

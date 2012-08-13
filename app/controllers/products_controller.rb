@@ -17,7 +17,9 @@ class ProductsController < ApplicationController
     @comment_line_item = CommentLineItem.new
     @product = Product.find(params[:id])
     product_id = params[:id]
-    @comments = CommentLineItem.where(:product_id => product_id).order("created_at desc").limit(10)
+    @comments = CommentLineItem.where(:product_id => product_id).order("created_at desc").paginate :page=>params[:page],
+     :per_page => 5
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
