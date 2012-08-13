@@ -15,30 +15,24 @@
 <body id="store" >
 	<div id="banner">
 		<div id="logo_pic">
-			<%= image_tag("logo.png") %>
-			<%= @page_title || t('.title') %>
+		<%= image_tag("logo.png") %>
+		<div class="website_name"></div>
+		<%= @page_title%>
 		</div>
 		<div id="banner_right_side">
-			<div id="div_search_input">
-		    	<%= form_tag searches_path, :class=>'search', :method=>'get' do %>
-				<%= text_field_tag "q", params[:q], :class => "search_input", :id => "search_tips" %>
-			</div>
-			<div id="div_search_submit">
-				<%= submit_tag "", :class => "btn_search" %>
-			</div>
-			<% end %>
-			
-			
-			<!-- <%= submit_tag 'submit' %> -->
-			
-			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
-			<%= form_tag store_path, :class => 'locale' do %>			
-			<% end %>
+		<%= form_tag searches_path, :class=>'search', :method=>'get' do %>
+			<%= text_field_tag "q", params[:q], :class => "search_input", :id => "search_tips" %>
+			<%= submit_tag "Search", :class => "btn_search" %>
+		<% end %>
 		</div>
 		<div id="languge_select">
+		<%= form_tag store_path, :class => 'locale' do %>
 			<%= select_tag 'set_locale',
 			options_for_select(LANGUAGES, I18n.locale.to_s),
 			:onchange => 'this.form.submit()'%>
+			<%= submit_tag 'submit' %>
+			<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+		<% end %>
 		</div>
 	</div>
 	<div id="columns">
