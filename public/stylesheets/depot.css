@@ -29,11 +29,6 @@ body {
         color: #226;
         border-bottom: 3px dotted #77d;
 }
-#store h5 {
-        font:  100% sans-serif;
-        color: #00ffff;
-        border-bottom: 2px ;
-}
 
 #store .cart_title{
 	font: 120% bold;
@@ -170,6 +165,11 @@ body {
 }*/
 #columns {
 	background: #141; /*width: 80%; margin:0 auto;*/
+	border-right:#141 1px solid; 
+}
+#columns,#nav-main{
+	width: 80%;
+	margin: 0 auto;
 }
 #main {
 	margin-left: 15em;
@@ -242,7 +242,6 @@ body {
 
 /*styles for questions/index */
 #question_list{
-	width :900px;
 	margin:auto;
 }
 
@@ -336,4 +335,81 @@ body {
 }
 #div_search_submit {
 	float: left;
+}
+
+
+
+
+.nav {
+	MARGIN: 1px 0; 
+	WIDTH: 100%; 
+	FONT-FAMILY: verdana; 
+	HEIGHT: 21px; 
+	BACKGROUND-COLOR: #970B0B;
+	font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+}
+.nav UL {
+	PADDING: 0px; 
+	DISPLAY: block; 
+	MARGIN: 0px; 
+	LIST-STYLE-TYPE: none; 
+	HEIGHT: 21px; 
+	BACKGROUND-COLOR: #970B0B;
+	COLOR: #ffffff; 
+}
+.nav LI {
+	border-left: #ffffff 1px solid;
+	DISPLAY: block; 
+	FLOAT: left; 
+	HEIGHT: 21px;
+	font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    width: 80px;
+}
+.nav LI A {
+	PADDING:1px 15px 0; 
+	DISPLAY: block; 
+	FONT-WEIGHT: none; 
+	COLOR: #ffffff; 
+	LINE-HEIGHT: 20px; 
+	TEXT-DECORATION: none;
+}
+.nav LI A:hover {
+	COLOR:#562505; 
+	BACKGROUND-COLOR: #f4f524; 
+	TEXT-DECORATION: none;
+}
+.current{
+  color:#ffffff;
+  background:#D42524;
+}
+.nav li#date{
+  color:#ffffff;
+  PADDING:2px 15px 0; 
+}
+
+
+
+.baidu{
+	font-size:14px;
+	line-height:24px;
+	font-family:arial;
+} 
+.baidu a{
+	color:#0000cc;
+}
+.baidu a:hover{
+	BACKGROUND-COLOR: gray;
+}
+.baidu span{
+ 	color:#6f6f6f;
+ 	font-size:12px;
+}
+a.more{
+  	color:#008000;
+}
+a.blk{
+	color:#000;
+	font-weight:bold;
 }

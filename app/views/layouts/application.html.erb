@@ -35,6 +35,23 @@
 		<% end %>
 		</div>
 	</div>
+	<div class="nav">
+		<div id="nav-main">
+		  <ul>
+		    <li><a href="/"  onclick="change_bg(this)"><%= t('.home') %></a></li>
+		    <li><a href=<%= questions_path %> onclick="change_bg(this)"><%= t('.questions') %></a> </li>
+		    <li><a href="/news_store/index" onclick="change_bg(this)"><%= t('.news') %></a> </li>
+		    <li><a href="/userguide.html" target="_blank" onclick="change_bg(this)">about</a> </li>
+		    <%if session[:user_id]%>
+					
+				<li><%= link_to'Orders', orders_path %></li>
+				<li><%= link_to'Products',products_path %></li>
+				<li><%= link_to'Users', users_path %></li>
+				<li><a href="/news"><%= t('.Operate News') %></a></li>
+			<%end%>
+		  </ul>
+		</div>
+	</div>
 	<div id="columns">
 		<div id="side">
 			<% if @cart %>
@@ -43,14 +60,6 @@
 				<% end %>
 			<% end %>
 
-			<a href="/"><%= t('.home') %></a><br />
-			<a href=<%= questions_path %>><%= t('.questions') %></a><br />
-			<a href="/news_store/index"><%= t('.news') %></a><br />
-			
-			<div id="aboutsite">
-				<a href="/userguide.html" target="_blank">about</a>
-			</div>
-			<br/>
 			
 			<% unless session[:user_id] %>
 				<br />
@@ -85,7 +94,7 @@
 
 			<div id="service">
 				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
-			 		title="鑵捐QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
+			 		title="QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
 			 		<a href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes">Online service</a>
 			</div>
 		</div>
