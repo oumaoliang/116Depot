@@ -11,7 +11,18 @@
     <th></th>
   </tr>
 
-<% @orders.each do |order| %>
+<% all_orders = [] %>
+<%if User.find(session[:user_id]).user_type==0 %>
+<% all_orders = @orders %>
+<% else %>
+  <% for order in @orders %>
+    <% if order.user_id == session[:user_id] %>
+      <% all_orders<<order %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% for order in all_orders %>
   <tr>
     <td><%= order.name %></td>
     <td><%= order.address %></td>

@@ -52,6 +52,12 @@
 			</div>
 			<br/>
 			
+			<% unless session[:user_id] %>
+				<br />
+				<br />
+				<a href="<%= admin_path %>"><%= t('.login') %></a><br />
+				<a href="/users/new"><%= t('.register')%></a><br />
+			<% end %>
 			<div>
 				<% @categories.each do |c| %>
 				  <h5><%= c.cat %></h5>
@@ -64,15 +70,19 @@
 			</div>
 			
 			<%if session[:user_id]%>
+			<%if User.find(session[:user_id]).user_type==0 %>
 				<br />
-				<%= link_to'Orders', orders_path %><br/>
-				<%= link_to'Products',products_path %><br/>
-				<%= link_to'Users', users_path %><br/>
+				<%= link_to'All Orders', orders_path %><br/>
+				<%= link_to'All Products',products_path %><br/>
+				<%= link_to'All Users', users_path %><br/>
 				<a href="/news"><%= t('.Operate News') %></a><br />
-
+			<% else %>
+				<%= link_to'My Orders', orders_path %><br/>
+			<% end %>
 				<br />
 				<%= button_to'Logout',logout_path, :method=>:delete ,:id => "btn_logout"%>
 			<%end%>
+
 			<div id="service">
 				<a target="_blank" href="tencent://message/?uin=806794204&Site=www.xnzjpc.com.cn&Menu=yes"
 			 		title="鑵捐QQ"><img src="http://wpa.qq.com/pa?p=1:806794204:4"></a> 
