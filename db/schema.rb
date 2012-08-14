@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20120813030012) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "score"
-    t.string   "cat", :default => "Others"
+    t.string   "cat", :default => "others"
     t.string   "sub"
     t.string   "pid"
   end

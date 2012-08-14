@@ -219,7 +219,7 @@ Product.create(:title => 'RuiLi',
   readers database, as well as the largest Ruili model resource pool.
       </p>},
   :image_url => '/images/ruili.jpg',
-  :sub => "Fanshion",
+  :sub => "Fashion",
   :score => 4,
   :price => 22)
 # . . .
