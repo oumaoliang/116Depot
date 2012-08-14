@@ -25,13 +25,22 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.xml
   def new
-    if current_cart.line_items.empty?
-      redirect_to store_url, :notice => "Your cart is empty"
+    path = store_url
+    notice = "Your cart is empty"
+
+    unless session[:user_id]
+      path = admin_path
+      notice = "Please login"
+    end
+
+    if current_cart.line_items.empty?||!session[:user_id]
+      redirect_to path, :notice => notice
       return
     end
     
     @order = Order.new
 
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
