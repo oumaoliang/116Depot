@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript">
+	function hideshow(which){
+		if (!document.getElementById)
+		return
+		if (which.style.display!="block")
+			which.style.display="block"
+		else
+			which.style.display="none"
+	}
+	</script>
   <%= favicon_link_tag '/images/web_logo.ico'%>
   <title>Pragprog Books Online Store</title>
 <!-- START_HIGHLIGHT -->
@@ -43,12 +53,13 @@
 	</div>
 	<div id="columns">
 		<div id="side">
+			<!--
 			<% if @cart %>
 				<%= hidden_div_if(@cart.line_items.empty?, :id=>"cart") do %>
 					<%= render @cart %>
 				<% end %>
 			<% end %>
-
+			-->
 			<a href="/"><%= t('.home') %></a><br />
 			<a href=<%= questions_path %>><%= t('.questions') %></a><br />
 			<a href="/news_store/index"><%= t('.news') %></a><br />
