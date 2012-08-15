@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120815041515) do
     t.text     "cmContent"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "grade"
+    t.integer  "grade",      :default => 3
   end
 
   create_table "comments", :force => true do |t|
@@ -72,10 +72,8 @@ ActiveRecord::Schema.define(:version => 20120815041515) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "score"
-    t.string   "cat"
     t.string   "sub"
-    t.string   "pid"
-    t.integer  "number"
+    t.integer  "number",      :default => 1
   end
 
   create_table "questions", :force => true do |t|
