@@ -240,3 +240,20 @@ Product.create(:title => 'Science',
 User.create(:name => 'dave', :password => 'secret',
   :password_confirmation => 'secret')
 
+Category.create(:cat => 'IT')
+Category.create(:cat => 'Literature')
+Category.create(:cat => 'Language')
+Category.create(:cat => 'Magazine')
+Category.create(:cat => 'Others')
+
+Subject.create(:sub => 'Program', :pid => 'IT')
+Subject.create(:sub => 'Database', :pid => 'IT')
+Subject.create(:sub => 'Compture', :pid => 'IT')
+Subject.create(:sub => 'Youth', :pid => 'Literature')
+Subject.create(:sub => 'Novel', :pid => 'Literature')
+Subject.create(:sub => 'English', :pid => 'Language')
+Subject.create(:sub => 'Chinese', :pid => 'Language')
+Subject.create(:sub => 'Fashion', :pid => 'Magazine')
+Subject.create(:sub => 'Computer', :pid => 'Magazine')
+Subject.create(:sub => 'Science', :pid => 'Magazine')
+Subject.create(:sub => 'others', :pid => 'Others')
