@@ -1,3 +1,11 @@
+<script type="text/javascript">
+   function unfold()
+   {
+   	  
+   }
+
+</script>
+
 <!-- START:head -->
 <!DOCTYPE html>
 <html>
@@ -69,7 +77,7 @@
 			<% end %>
 			<div>
 				<% @categories.each do |c| %>
-				  <h5><%= c.cat %></h5>
+				  <h5><%=  c.cat %></h5>
 				    <% @subjects.each do |s|%>
 				      <% if s.pid == c.cat %>
 				       <%= link_to s.sub, s %><br/>
