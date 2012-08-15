@@ -435,3 +435,12 @@ a.blk{
 #columns .category_tree {
 	color: white;
 }
+
+#classify h5{
+	background-color: #666666;
+	color: #00ff99;
+}
+#classify a{
+	text-decoration: none;
+	color: #ffffcc;
+}
