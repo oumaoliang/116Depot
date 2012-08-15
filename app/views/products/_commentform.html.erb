@@ -11,11 +11,15 @@
 </style>
 
 <script type="text/javascript">
-	function check_before_submit(str) {
+	function check_before_submit(str,x) {
 		if (str == "")	{
 			alert("can not be empty!");
 			return false;
 			}
+	    if (x!=0 && x!=1 && x!=2 && x!=3 && x!=4 && x!=5)	{
+			alert("score must be 0,1,2,3,4,5!");
+			return false;
+			}		
 	}
 </script>
 
@@ -52,6 +56,6 @@
   
   
   <div class="actions">
-    <%= f.submit :value => "create comment", :onclick => "return check_before_submit(bxComment.value)" %>
+    <%= f.submit :value => "create comment", :onclick => "return check_before_submit(bxComment.value,bxGrade.value)" %>
   </div>
 <% end %>

@@ -39,16 +39,28 @@
   	<b>Category:</b>
   	  <%= @product.sub %>
 	</p>
-	
 	<p>
   	<b>Number:</b>
   	  <%= @product.number %>
 	</p>
 	
+	<div class="add_to_cart">
+	<!-- <%= button_to 'Add to Cart',line_items_path(:product_id => @product.id), :remote => true %> -->
+	<!-- <input type="text" id="select_num" value="1" /> -->
+ 	<%= button_to 'Add to cart', {:controller => "line_items", :action => "create", 
+		:product_id => @product.id}, :remote => true, :class => "addtocart", :onmouseover => "this.className='addtocart1'",
+		:onmouseout => "this.className='addtocart'" %> 
+<!-- 	<form action="line_items/create" method="post">
+		<input type="text" />
+		<input type="submit" value="Add to Cart" />
+	</form> -->
+	</div>
+</div>
+
+<div id="split_line" style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
+<div class="description">
 	<b>Description:</b>
 	  <%= sanitize @product.description %>
-	</p>
-	<p>
 </div>
 <div style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
 
@@ -61,7 +73,7 @@
 				<%= comment.cmContent%>
 				<%if session[:user_id]%>
 					<div id="delete_comment">
-						<%= link_to 'Destroy', comment, :confirm => "Are you sure?", :method => :delete, :style => "color:red" %>
+						<%= link_to 'Delete', comment, :confirm => "Are you sure?", :method => :delete, :style => "color:red" %>
 					</div>
 				<% end %>
 			</div>

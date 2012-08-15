@@ -54,6 +54,7 @@ class LineItemsController < ApplicationController
         format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /line_items/1
