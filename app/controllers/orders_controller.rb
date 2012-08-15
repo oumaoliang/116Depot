@@ -15,7 +15,11 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
-
+    
+   if params[:ship].to_i==0
+     Notifier.order_shipped(@order).deliver
+     
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @order }
@@ -25,13 +29,22 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.xml
   def new
-    if current_cart.line_items.empty?
-      redirect_to store_url, :notice => "Your cart is empty"
+    path = store_url
+    notice = "Your cart is empty"
+
+    unless session[:user_id]
+      path = admin_path
+      notice = "Please login"
+    end
+
+    if current_cart.line_items.empty?||!session[:user_id]
+      redirect_to path, :notice => notice
       return
     end
     
     @order = Order.new
 
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
@@ -40,20 +53,24 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:id]) 
+
   end
 
   # POST /orders
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @order.state="Ordered"
     @order.add_line_items_from_cart(current_cart)
+    @order.user_id = session[:user_id]
     
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
+       
         format.html { redirect_to(store_url, :notice => 
           I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created, 

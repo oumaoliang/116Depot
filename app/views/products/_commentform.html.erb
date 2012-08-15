@@ -5,6 +5,9 @@
 	#content_label {
 		margin-top: 50px;
 	}
+	#bxGrade{
+		height:20px; width:90%;
+	}
 </style>
 
 <script type="text/javascript">
@@ -12,7 +15,7 @@
 		if (str == "")	{
 			alert("can not be empty!");
 			return false;
-			}
+			}	
 	}
 </script>
 
@@ -41,6 +44,12 @@
     <%= f.label "write down you comment here.", :id => "content_label"%><br />
     <%= f.text_area :cmContent, :id => "bxComment"  %>
   </div>
+  
+  <div class="field">
+    <%= f.select :grade, Product::SELECT_GRADE ,:id => 'bxGrade',
+    :prompt => "Mark the book,default is 5" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit :value => "create comment", :onclick => "return check_before_submit(bxComment.value)" %>
   </div>

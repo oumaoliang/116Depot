@@ -1,3 +1,12 @@
+<script type="text/javascript">
+	function check_before_submit(str) {
+		if (str == "")	{
+			alert("can not be empty!");
+			return false;
+			}	
+	}
+</script>
+
 <%= form_for(@comment_line_item) do |f| %>
   <% if @comment_line_item.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +32,13 @@
     <%= f.label "write down you comment here."%><br />
     <%= f.text_area :cmContent, :id => "bxComment"  %>
   </div>
+  
+<div class="field">
+    <%= f.select :grade, Product::SELECT_GRADE ,:id => 'bxGrade',
+    :prompt => "Mark the book,default is 5" %>
+  </div>
+  
   <div class="actions">
-    <%= f.submit :value => "create comment"%>
+    <%= f.submit :value => "create comment", :onclick => "return check_before_submit(bxComment.value)" %>
   </div>
 <% end %>

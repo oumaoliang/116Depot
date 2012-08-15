@@ -30,7 +30,7 @@ class CommentLineItemsController < ApplicationController
   # GET /comment_line_items/new.xml
   def new
     @comment_line_item = CommentLineItem.new
-    
+    @comment_line_item.grade
     @new_id = params[:product_id]
     respond_to do |format|
       format.html # new.html.erb
@@ -64,7 +64,7 @@ class CommentLineItemsController < ApplicationController
   # PUT /comment_line_items/1.xml
   def update
     @comment_line_item = CommentLineItem.find(params[:id])
-
+    product_grade = @comment_line_item.grade
     respond_to do |format|
       if @comment_line_item.update_attributes(params[:comment_line_item])
         format.html { redirect_to(@comment_line_item, :notice => 'Comment line item was successfully updated.') }

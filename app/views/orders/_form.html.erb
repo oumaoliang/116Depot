@@ -30,7 +30,27 @@
                        Order::PAYMENT_TYPES,
                        :prompt => t('.pay_prompt') %>
   </div>
-
-    <%= f.submit t('.submit')  %>
-
+     <% if @order.state =="Ordered"%>
+    <div>
+    	<%= f.label :state, t('.state')+":" %><br />
+   	 	<%= f.select :state, 
+                       Order::STATE_TYPES,
+                       :prompt => t('._prompt') %>
+   		<%= button_to 'ship', {:controller => 'orders', :action => 'show',
+	 :ship => 11}, :method => :get %>
+ 	 </div>
+   <%end%>
+   
+    <% if @order.state =="Shipped"%>
+    <div>
+   		<%= button_to 'Update order', {:controller => 'orders', :action => 'show'
+	}, :method => :get %>
+ 	</div>
+   <%end%>
+   
+   <% if @order.state==nil %> 
+   <div class="actions">
+    <%= f.submit %>
+    </div>
+   <% end %>
 <% end %>

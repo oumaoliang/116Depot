@@ -2,9 +2,14 @@ class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
   before_filter :authorize
   protect_from_forgery
+   
+  @categories = Category.all
+  @subjects = Subject.all
   
   private
 	def current_cart
+	  @categories = Category.all
+  @subjects = Subject.all
 		Cart.find(session[:cart_id])
 	rescue ActiveRecord::RecordNotFound
 		cart=Cart.create
@@ -14,12 +19,16 @@ class ApplicationController < ActionController::Base
 	
 	protected
   def authorize
+    @categories = Category.all
+  @subjects = Subject.all
     unless User.find_by_id(session[:user_id])
       redirect_to login_url,:notice=>"Please log in"
     end
   end
   
     def set_i18n_locale_from_params
+      @categories = Category.all
+  @subjects = Subject.all
       if params[:locale]
         if I18n.available_locales.include?(params[:locale].to_sym)
           I18n.locale = params[:locale]
@@ -32,6 +41,8 @@ class ApplicationController < ActionController::Base
     end
 
     def default_url_options
+      @categories = Category.all
+  @subjects = Subject.all
       { :locale => I18n.locale }
     end
 end

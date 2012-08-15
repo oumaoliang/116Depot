@@ -6,7 +6,7 @@
 		float: left; padding-right:20px; width: 120px; height:auto;
 	}
 	#each_comment {
-		border-style:solid; border-width:1px; border-color:#87CEFF; height: 150px; margin-top:5px;
+		border-style:solid; border-width:1px; border-color:#E5E5E5; height: 165px; margin-top:5px;
 	}
 	#each_comment_content img {
 		float: left; padding-right: 12px;
@@ -16,6 +16,9 @@
 	}
 	#delete_comment {
 		float: right;
+	}
+	#page_link {
+		margin-left: 30%;
 	}
 </style>
 <div id="product_detail">
@@ -32,10 +35,32 @@
   	<b>Score:</b>
   	  <%= @product.score %>
 	</p>
-	<b>Description:</b>
-	  <%= sanitize @product.description %>
+	<p>
+  	<b>Category:</b>
+  	  <%= @product.sub %>
 	</p>
 	<p>
+  	<b>Number:</b>
+  	  <%= @product.number %>
+	</p>
+	
+	<div class="add_to_cart">
+	<!-- <%= button_to 'Add to Cart',line_items_path(:product_id => @product.id), :remote => true %> -->
+	<!-- <input type="text" id="select_num" value="1" /> -->
+ 	<%= button_to 'Add to cart', {:controller => "line_items", :action => "create", 
+		:product_id => @product.id}, :remote => true, :class => "addtocart", :onmouseover => "this.className='addtocart1'",
+		:onmouseout => "this.className='addtocart'" %> 
+<!-- 	<form action="line_items/create" method="post">
+		<input type="text" />
+		<input type="submit" value="Add to Cart" />
+	</form> -->
+	</div>
+</div>
+
+<div id="split_line" style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
+<div class="description">
+	<b>Description:</b>
+	  <%= sanitize @product.description %>
 </div>
 <div style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
 
@@ -48,21 +73,27 @@
 				<%= comment.cmContent%>
 				<%if session[:user_id]%>
 					<div id="delete_comment">
-						<%= link_to 'Destroy', comment, :confirm => "Are you sure?", :method => :delete %>
+						<%= link_to 'Delete', comment, :confirm => "Are you sure?", :method => :delete, :style => "color:red" %>
 					</div>
 				<% end %>
 			</div>
+			    <% if comment.grade == nil %>
+			       <% comment.grade = 5 %>
+			    <% end %>
+				grade: <%= comment.grade%>
+			
 			<div id="each_comment_tile">
 				posted at: <%= comment.created_at%>
 			</div>
 		</div>
 	<% end %>
 </div>
-
+<div id="page_link"> <%= will_paginate @comments %> </div>
 <%= render 'commentform' %>
 
 <%if session[:user_id]%>
+<%if User.find(session[:user_id]).user_type==0 %>
 	<%= link_to 'Edit', edit_product_path(@product) %> |
-
+<% end %>
 	<%= link_to 'Back', products_path()%>
 <% end %>

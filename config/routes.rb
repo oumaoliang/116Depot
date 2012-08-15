@@ -1,4 +1,8 @@
 Depot::Application.routes.draw do
+  resources :subjects
+
+  resources :categories
+
   get "news_store/index"
 
   resources :news
@@ -23,6 +27,15 @@ Depot::Application.routes.draw do
        collection do
          get 'check_name'
        end
+  end
+  resource :subjects do
+    member do
+      get 'result'
+    end
+    
+    collection do
+      get 'result'
+    end
   end
   scope '(:locale)' do
   resources :users

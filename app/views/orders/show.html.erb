@@ -21,7 +21,12 @@
   <b>Pay type:</b>
   <%= @order.pay_type %>
 </p>
+<p>
+	<b>State:</b>
+	<%=@order.state%>
+</p>
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+<%=  link_to 'Edit', {:controller => 'orders', :action => 'edit',
+	 :ship => 10}, :method => :get %> |
 <%= link_to 'Back', orders_path %>

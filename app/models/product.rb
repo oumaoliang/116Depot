@@ -1,7 +1,10 @@
 class Product < ActiveRecord::Base
+  SELECT_GRADE = [0,1,2,3,4,5]
 	default_scope :order => 'title'
 	has_many :line_items
 	has_many :comment_line_items
+	has_many :category   #########
+	has_many :subject
 	has_many :orders, :through => :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
 	

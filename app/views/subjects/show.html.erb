@@ -1,0 +1,23 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Search Results</h1>
+
+<% if @results.length == 0 %>
+<h5>Sorry,there are not such books!</h5>
+<% end %>
+
+<% @results.each do |product| %>
+	<div class="entry">
+		<%= image_tag(product.image_url) %>
+		<h3><%= link_to(product.title, product_path(:id => product.id), :method => :get )%></h3>
+		<%= truncate(strip_tags(product.description),:length => 120) %>
+		<div class="price_line">
+			<span class="price"><%= number_to_currency(product.price) %></span>
+		</div>
+	</div>
+<% end %>
+<div id="paging">
+<p> <%= will_paginate @results %></p>
+</div>
