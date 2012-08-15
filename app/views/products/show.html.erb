@@ -6,7 +6,7 @@
 		float: left; padding-right:20px; width: 120px; height:auto;
 	}
 	#each_comment {
-		border-style:solid; border-width:1px; border-color:#E5E5E5; height: 150px; margin-top:5px;
+		border-style:solid; border-width:1px; border-color:#E5E5E5; height: 165px; margin-top:5px;
 	}
 	#each_comment_content img {
 		float: left; padding-right: 12px;
@@ -39,6 +39,12 @@
   	<b>Category:</b>
   	  <%= @product.sub %>
 	</p>
+	
+	<p>
+  	<b>Number:</b>
+  	  <%= @product.number %>
+	</p>
+	
 	<b>Description:</b>
 	  <%= sanitize @product.description %>
 	</p>
@@ -59,6 +65,8 @@
 					</div>
 				<% end %>
 			</div>
+				grade: <%= comment.grade%>
+			
 			<div id="each_comment_tile">
 				posted at: <%= comment.created_at%>
 			</div>

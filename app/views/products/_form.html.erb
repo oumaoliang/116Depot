@@ -33,10 +33,15 @@
     <%= f.text_field :score %>
   </div>
   
+  
+   <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+  
    <div class="field">
     <%= f.label :subject %><br />
     <%= f.select :sub,(@subjects.collect {|m| [m.sub]}), :required => true %>
-    
   </div>
  
   
