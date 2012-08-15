@@ -5,6 +5,7 @@
     <th>Username</th>
     <th>Cmcontent</th>
     <th>Productid</th>
+    <th>Grade</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= comment.userName %></td>
     <td><%= comment.cmContent %></td>
     <td><%= comment.productId %></td>
+    <td><%= comment.grade %></td>
     <td><%= link_to 'Show', comment %></td>
     <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
     <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>

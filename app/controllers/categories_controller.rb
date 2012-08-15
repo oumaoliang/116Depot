@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
     
     respond_to do |format|
       format.html # show.html.erb
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
   def edit
     @category = Category.find(params[:id])
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
   end
 
   # POST /categories
@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(params[:category])
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
 
     respond_to do |format|
       if @category.save
@@ -67,7 +67,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     cat = params[:cat]
-    @subjects = Subject.where(:pid => "Program").all
+    @subjects = Subject.where(:pid => cat).all
 
     respond_to do |format|
       if @category.update_attributes(params[:category])

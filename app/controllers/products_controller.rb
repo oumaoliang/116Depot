@@ -4,7 +4,21 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
      @products = Product.paginate :page=>params[:page], :order=>'title desc', :per_page => 12
-
+     @products.each do |product|
+       @comments = CommentLineItem.where(:comment_id => product.id)
+       product.number = @comments.length               
+       x = 0
+       y = product.number-1
+       if @comments.length != 0     
+          for i in 0..y
+            if (@comments[i].grade == nil)
+              @comments[i].grade = 5
+            end
+            x = x + @comments[i].grade
+          end
+          product.score = x/@comments.length
+       end
+     end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
@@ -21,7 +35,19 @@ class ProductsController < ApplicationController
     product_id = params[:id]
     @comments = CommentLineItem.where(:product_id => product_id).order("created_at desc").paginate :page=>params[:page],
      :per_page => 5
-    
+    @comments2 = CommentLineItem.where(:product_id => product_id)
+    @product.number = @comments2.length               
+    x = 0
+    y = @product.number-1
+    if @comments2.length != 0     
+      for i in 0..y
+        if (@comments2[i].grade == nil)
+          @comments2[i].grade = 5
+        end
+        x = x + @comments2[i].grade
+      end
+      @product.score = x/@product.number
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
@@ -42,7 +68,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    #@subjects = Subject.all
+    @subjects = Subject.all 
   end
 
   # POST /products
