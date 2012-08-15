@@ -432,3 +432,6 @@ a.blk{
 #split_line {
 	margin-top: 100px;
 }
+#columns .category_tree {
+	color: white;
+}

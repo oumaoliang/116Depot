@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  SELECT_GRADE = [0,1,2,3,4,5]
 	default_scope :order => 'title'
 	has_many :line_items
 	has_many :comment_line_items

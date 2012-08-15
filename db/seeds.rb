@@ -12,7 +12,7 @@ Product.create(:title => 'Web Design for Developers',
         all the way to implementation.
       </p>},
   :image_url =>   '/images/wd4d.jpg',    
-  :score => 3,
+  :score => 0,
   :sub => "Program",
   :price => 42.95)
 # . . .
@@ -24,7 +24,7 @@ Product.create(:title => 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   :image_url => '/images/ruby.jpg',
-  :score => 2,
+  :score => 0,
   :sub => "Program",
   :price => 49.50)
 # . . .
@@ -40,7 +40,7 @@ Product.create(:title => 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   :image_url => '/images/rtp.jpg',
-  :score => 1,
+  :score => 0,
   :sub => "Program",
   :price => 43.75)
   
@@ -50,7 +50,7 @@ Product.create(:title => 'Rails Test Prescriptions',
         C++ prime.The book mainly teach you the C++ language, how to use C++, and so on
       </p>},
   :image_url => '/images/c.jpg',
-  :score => 4,
+  :score => 0,
   :sub => "Program",
   :price => 45.0)
 # . . .
@@ -63,7 +63,7 @@ Product.create(:title => 'A Tale of Two Cities',
        million, and has frequently been adapted into a movie onto the screen.
       </p>},
   :image_url => '/images/story3.jpg',
-  :score => 3,
+  :score => 0,
   :sub => "Novel",
   :price => 12.4)
 # . . .
@@ -74,7 +74,7 @@ Product.create(:title => 'English for Grade3',
        This is a English book for grade 3 student. This is a English book for grade 3 student
       </p>},
   :image_url => '/images/english1.jpg',
-  :score => 2,
+  :score => 0,
   :sub => "English",
   :price => 35.4)
 # . . .
@@ -85,7 +85,7 @@ Product.create(:title => 'English for Grade2',
        This is a English book for grade 2 student.This is a English book for grade 2 student
       </p>},
   :image_url => '/images/english2.jpg',
-  :score => 4,
+  :score => 0,
   :sub => "English",
   :price => 23)
 # . . .
@@ -96,7 +96,7 @@ Product.create(:title => 'English for university',
       This is a English book for university students.This is a English book for university students
       </p>},
   :image_url => '/images/english3.jpg',
-  :score => 5,
+  :score => 0,
   :sub => "English",
   :price => 18)
 # . . .
@@ -107,7 +107,7 @@ Product.create(:title => 'English for teacher',
         This is a English book for university teachers. This is a English book for university teachers.
       </p>},
   :image_url => '/images/english4.jpg',
-  :score => 4,
+  :score => 0,
   :sub => "English",
   :price => 54.2)
 # . . .
@@ -118,7 +118,7 @@ Product.create(:title => 'HTML5',
        Introduction to HTML5.this book will tell you how to learn html5
       </p>},
   :image_url => '/images/HTML5.jpg',
-  :score => 2,
+  :score => 0,
   :sub => "Program",
   :price => 16)
 # . . .
@@ -129,7 +129,7 @@ Product.create(:title => 'introduction to China',
        Introduction to China.We will tell you the truth about china, chinese people,chinese food...
       </p>},
   :image_url => '/images/china.jpg',
-  :score => 1,
+  :score => 0,
   :sub => "Chinese",
   :price => 45)
 # . . .
@@ -140,7 +140,7 @@ Product.create(:title => 'Database',
        Introduction to database.Data is more an more important in our daily life, the database is the ..
       </p>},
   :image_url => '/images/database.jpg',
-  :score => 3,
+  :score => 0,
   :sub => "Database",
   :price => 16)
 # . . .
@@ -152,7 +152,7 @@ Product.create(:title => 'Network',
       </p>},
   :image_url => '/images/network.jpg',
   :sub => "Compture Network",
-  :score => 5,
+  :score => 0,
   :price => 16)
 # . . .
 
@@ -167,7 +167,7 @@ Product.create(:title => 'Journey to the West',
       </p>},
   :image_url => '/images/xiyouji.jpg',
   :sub => "Novel",
-  :score => 3,
+  :score => 0,
   :price => 67)
 # . . .
 
@@ -180,7 +180,7 @@ Product.create(:title => 'Water Margin',
       </p>},
   :image_url => '/images/shuihuzhuan.jpg',
   :sub => "Novel",
-  :score => 5,
+  :score => 0,
   :price => 47)
 # . . .
 
@@ -194,7 +194,7 @@ Product.create(:title => 'Romance of the Three Kingdoms',
       </p>},
   :image_url => '/images/sanguoyanyi.jpg',
   :sub => "Novel",
-  :score => 3,
+  :score => 0,
   :price => 45)
 # . . .
 
@@ -207,7 +207,7 @@ Product.create(:title => 'A Dream of Red Mansions',
       </p>},
   :image_url => '/images/hongloumeng.jpg',
   :sub => "Novel",
-  :score => 4,
+  :score => 0,
   :price => 243)
 # . . .
 
@@ -220,7 +220,7 @@ Product.create(:title => 'RuiLi',
       </p>},
   :image_url => '/images/ruili.jpg',
   :sub => "Fashion",
-  :score => 4,
+  :score => 0,
   :price => 22)
 # . . .
 
@@ -232,7 +232,7 @@ Product.create(:title => 'Science',
       </p>},
   :image_url => '/images/kexue.jpg',
   :sub => "Science",
-  :score => 5,
+  :score => 0,
   :price => 12)
 # . . .
 
@@ -240,3 +240,20 @@ Product.create(:title => 'Science',
 User.create(:name => 'dave', :password => 'secret',
   :password_confirmation => 'secret',:user_type => 0)
 
+Category.create(:cat => 'IT')
+Category.create(:cat => 'Literature')
+Category.create(:cat => 'Language')
+Category.create(:cat => 'Magazine')
+Category.create(:cat => 'Others')
+
+Subject.create(:sub => 'Program', :pid => 'IT')
+Subject.create(:sub => 'Database', :pid => 'IT')
+Subject.create(:sub => 'Compture', :pid => 'IT')
+Subject.create(:sub => 'Youth', :pid => 'Literature')
+Subject.create(:sub => 'Novel', :pid => 'Literature')
+Subject.create(:sub => 'English', :pid => 'Language')
+Subject.create(:sub => 'Chinese', :pid => 'Language')
+Subject.create(:sub => 'Fashion', :pid => 'Magazine')
+Subject.create(:sub => 'Computer', :pid => 'Magazine')
+Subject.create(:sub => 'Science', :pid => 'Magazine')
+Subject.create(:sub => 'others', :pid => 'Others')
