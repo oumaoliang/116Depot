@@ -238,7 +238,7 @@ Product.create(:title => 'Science',
 
 
 User.create(:name => 'dave', :password => 'secret',
-  :password_confirmation => 'secret')
+  :password_confirmation => 'secret',:user_type => 0)
 
 Category.create(:cat => 'IT')
 Category.create(:cat => 'Literature')

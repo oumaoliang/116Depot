@@ -16,6 +16,11 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
 
+   if params[:ship].to_i==0
+     @order.state="Shipped"
+     Notifier.order_shipped(@order).deliver
+     
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @order }
@@ -49,13 +54,15 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:id]) 
+
   end
 
   # POST /orders
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @order.state="Ordered"
     @order.add_line_items_from_cart(current_cart)
     @order.user_id = session[:user_id]
     
@@ -64,6 +71,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
+       
         format.html { redirect_to(store_url, :notice => 
           I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created, 

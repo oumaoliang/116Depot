@@ -92,7 +92,8 @@
 <%= render 'commentform' %>
 
 <%if session[:user_id]%>
+<%if User.find(session[:user_id]).user_type==0 %>
 	<%= link_to 'Edit', edit_product_path(@product) %> |
-
+<% end %>
 	<%= link_to 'Back', products_path()%>
 <% end %>
