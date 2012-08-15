@@ -77,6 +77,9 @@
 					</div>
 				<% end %>
 			</div>
+			    <% if comment.grade == nil %>
+			       <% comment.grade = 5 %>
+			    <% end %>
 				grade: <%= comment.grade%>
 			
 			<div id="each_comment_tile">

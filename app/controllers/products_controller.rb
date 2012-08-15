@@ -6,11 +6,14 @@ class ProductsController < ApplicationController
      @products = Product.paginate :page=>params[:page], :order=>'title desc', :per_page => 12
      @products.each do |product|
        @comments = CommentLineItem.where(:comment_id => product.id)
-       product.number = @comments.length               #赋值，嘿嘿嘿~~~~~~~~~~~~~~
+       product.number = @comments.length               
        x = 0
        y = product.number-1
        if @comments.length != 0     
           for i in 0..y
+            if (@comments[i].grade == nil)
+              @comments[i].grade = 5
+            end
             x = x + @comments[i].grade
           end
           product.score = x/@comments.length
@@ -38,6 +41,9 @@ class ProductsController < ApplicationController
     y = @product.number-1
     if @comments2.length != 0     
       for i in 0..y
+        if (@comments2[i].grade == nil)
+          @comments2[i].grade = 5
+        end
         x = x + @comments2[i].grade
       end
       @product.score = x/@product.number

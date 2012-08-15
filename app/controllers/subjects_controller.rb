@@ -14,8 +14,10 @@ class SubjectsController < ApplicationController
   # GET /subjects/1.xml
   def show
     @subject = Subject.find(params[:id])
-    @results = Product.find(:all, :conditions=>{:sub => @subject.sub})
-    @cart = current_cart
+    @results = Product.where(:sub => @subject.sub).paginate :page=>params[:page],
+     :per_page => 5
+    @cart = current_cart    
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @subject }
