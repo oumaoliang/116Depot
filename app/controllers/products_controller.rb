@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    @cart = current_cart
     @comment_line_item = CommentLineItem.new
     @subjects = Subject.all
     @product = Product.find(params[:id])
