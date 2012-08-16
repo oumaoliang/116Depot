@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
+  $check=1
  
   def index
     @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
@@ -15,10 +16,7 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
-    
-   if params[:ship].to_i==0
-     Notifier.order_shipped(@order).deliver
-    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @order }
@@ -84,9 +82,20 @@ class OrdersController < ApplicationController
   # PUT /orders/1.xml
   def update
     @order = Order.find(params[:id])
-
+    
+    @tag=0   
+    if @order.state=="Ordered"
+      @tag+=1
+    end
+  
     respond_to do |format|
       if @order.update_attributes(params[:order])
+        if @order.state=="Shipped"
+           @tag+=1
+        end
+        if @tag==2
+           Notifier.order_shipped(@order).deliver
+        end
         format.html { redirect_to(@order, :notice => 'Order was successfully updated.') }
         format.xml  { head :ok }
       else

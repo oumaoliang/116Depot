@@ -3,7 +3,6 @@
 <%= render 'form' %>
 
 <!-- <%=button_to'Ship',edit_order_path(@order),:method=>:get%> -->
-<%= link_to 'show', {:controller => 'orders', :action => 'show',
-	 :ship => 10}, :method => :get %>
+<%= link_to 'show',@order%>
 
 <%= link_to 'Back', orders_path %>
