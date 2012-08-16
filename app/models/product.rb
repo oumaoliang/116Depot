@@ -19,18 +19,18 @@ class Product < ActiveRecord::Base
 	
 	def self.search(query)
 	   if query
-	      find(:all, :conditions => ['title LIKE ?',"%#{query}%"])
+	      find(:all,:conditions => ['description LIKE ? OR title LIKE ? OR sub LIKE ?',"%#{query}%","%#{query}%" ,"%#{query}%"])
 	   else
 	      find(:all)
 	   end
 	end
 	   
 	
-	validates :title, :description, :image_url, :presence => true
-	validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
-	validates :title, :uniqueness => true
-	validates :image_url, :format => {
-		:with        => %r{\.(gif|jpg|png)$}i,
-		:message => 'must be a URL for GIF, JPG or PNG image.'
-	}
+  validates :title, :description, :image_url, :presence => true
+  validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
+  validates :title, :uniqueness => true
+  validates :image_url, :format => {
+    :with        => %r{\.(gif|jpg|png)$}i,
+    :message => 'must be a URL for GIF, JPG or PNG image.'
+  }
 end

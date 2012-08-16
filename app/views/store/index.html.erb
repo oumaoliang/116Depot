@@ -1,3 +1,18 @@
+<style type="text/css">
+div, ul, li, p, span { margin: 0; padding: 0; }
+#shop-rating { width: 120px; height: 25px; overflow: hidden; position: relative; float:right;}
+.rating-level,  .rating-level span { background: url(/images/o_star.png) no-repeat 9999px 9999px; /* ��Ҫ */ }
+.rating-level { background-position: 0 0; width: 120px; height: 23px; position: relative; }
+.rating-level li { display: inline; }
+.rating-level span { height: 23px; position: absolute; text-indent: -2222px; }
+.rating-level .one-star { width: 20%; z-index: 6; }
+.rating-level .two-star { width: 40%; z-index: 5; }
+.rating-level .three-star { width: 60%; z-index: 4; }
+.rating-level .four-star { width: 80%; z-index: 3; }
+.rating-level .five-star { width: 100%; z-index: 2; }
+.rating-level .one-star,  .rating-level .two-star ,.rating-level .three-star,  
+.rating-level .four-star,  .rating-level .five-star { background-position: 0 -28px; }
+</style>
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -6,12 +21,32 @@
 
 <% @products.each do |product| %>
 	<div class="entry">
-		<%= image_tag(product.image_url) %>
+		<%= link_to image_tag(product.image_url, :class => 'list_image'), product %>
 		<h3><%= link_to(product.title, product_path(:id => product.id), :method => :get )%></h3>
-		<%= truncate(strip_tags(product.description),:length => 120) %>
+		<%= truncate(strip_tags(product.description),:length => 120) %><br/><br/>
+		<div id="shop-rating">
+		<ul class="rating-level">
+				<% if product.score==1 %>
+				<li><span class="one-star">1</span></li>
+				<% end %> 
+				<% if product.score == 2 %>
+				<li><span class="two-star">2</span></li>
+				<% end %> 
+				<% if product.score == 3 %>
+				<li><span class="three-star">3</span></li>
+				<% end %> 
+				<% if product.score == 4 %>
+				<li><span class="four-star">4</span></li>
+				<% end %> 
+				<% if product.score == 5 %>
+				<li><span class="five-star">5</span></li>
+				<% end %> 
+	 </ul></div>
+		<%= product.number %><%= " Comments"%>
+		
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price) %></span>
-			<%= button_to t('.add_html'), line_items_path(:product_id => product), :remote => true %> 
+			<%= button_to "Add to Cart", line_items_path(:product_id => product), :remote => true %> 
 <!-- 			<%= link_to 'comments', comment_line_items_path(:product_id => product),
 				:method => :get %> -->
 		</div>
