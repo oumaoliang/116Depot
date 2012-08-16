@@ -22,10 +22,6 @@ div, ul, li, p, span { margin: 0; padding: 0; }
  	<% i = 1 %>
    <% @products.each do |product| %>
       <% if i%4 == 1%>
-         <!--<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-         	"toolTip('<img src=images/200955181403758690.jpg>')" onmouseout="toolTip()"
-         	-->
-         <!--<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">-->
          	<tr>
       <% end %>
       <td>

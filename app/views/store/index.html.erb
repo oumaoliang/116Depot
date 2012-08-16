@@ -47,8 +47,6 @@ div, ul, li, p, span { margin: 0; padding: 0; }
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price) %></span>
 			<%= button_to "Add to Cart", line_items_path(:product_id => product), :remote => true %> 
-<!-- 			<%= link_to 'comments', comment_line_items_path(:product_id => product),
-				:method => :get %> -->
 		</div>
 	</div>
 <% end %>
