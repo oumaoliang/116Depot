@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
 	
 	def self.search(query)
 	   if query
-	      find(:all,:conditions => ['description LIKE ? OR title LIKE ? OR sub LIKE ? OR pid LIKE ?',"%#{query}%","%#{query}%","%#{query}%" ,"%#{query}%"])
+	      find(:all,:conditions => ['description LIKE ? OR title LIKE ? OR sub LIKE ?',"%#{query}%","%#{query}%" ,"%#{query}%"])
 	   else
 	      find(:all)
 	   end
