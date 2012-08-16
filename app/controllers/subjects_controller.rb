@@ -16,7 +16,23 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
     @results = Product.where(:sub => @subject.sub).paginate :page=>params[:page],
      :per_page => 5
-    @cart = current_cart    
+    @cart = current_cart   
+    
+      @results.each do |product|
+        @comments = CommentLineItem.where(:comment_id => product.id)
+        product.number = @comments.length               
+        x = 0
+        y = product.number-1
+        if @comments.length != 0     
+          for i in 0..y
+            if (@comments[i].grade == nil)
+              @comments[i].grade = 5
+            end
+            x = x + @comments[i].grade
+          end
+          product.score = x/@comments.length
+       end
+      end
     
     respond_to do |format|
       format.html # show.html.erb
