@@ -36,14 +36,21 @@
    	 	<%= f.select :state, 
                        Order::STATE_TYPES,
                        :prompt => t('._prompt') %>
-   		<%= button_to 'ship', {:controller => 'orders', :action => 'edit',
+   		<%= button_to 'ship', {:controller => 'orders', :action => 'show',
 	 :ship => 11}, :method => :get %>
  	 </div>
    <%end%>
-
-   <% if @order.state =="Shipped"%>
-   <%= link_to 'Place order', {:controller => 'orders', :action => 'show',
-	:ship => 10}, :method => :get %>
+   
+    <% if @order.state =="Shipped"%>
+    <div>
+   		<%= button_to 'Update order', {:controller => 'orders', :action => 'show'
+	}, :method => :get %>
+ 	</div>
    <%end%>
-
+   
+   <% if @order.state==nil %> 
+   <div class="actions">
+    <%= f.submit %>
+    </div>
+   <% end %>
 <% end %>

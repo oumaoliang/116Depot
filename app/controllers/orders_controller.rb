@@ -15,9 +15,8 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
-
+    
    if params[:ship].to_i==0
-     @order.state="Shipped"
      Notifier.order_shipped(@order).deliver
      
     end

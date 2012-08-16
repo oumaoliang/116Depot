@@ -342,6 +342,42 @@ body {
 	float: left;
 }
 
+#botton_cart {
+	position: fixed;
+	right:10px;
+	bottom:1px;
+	z-index: 15;
+	width: 230px;
+	color:#3E3E3E;
+}
+
+#botton_cart .content {
+	background:#87CEFF;
+}
+
+#botton_cart .content .line_brief {
+	cursor:pointer;
+	background:#F8B9F8;
+	padding:7px;
+	overflow:hidden;
+	color:#fff;
+}
+
+#botton_cart .content .line_brief .col_group {
+	color:#333;
+	padding:3px 20px 3px 5px;
+	margin-top:4px;
+	margin-left:5px;
+	line-height:15px;
+	font-size:14px;
+	border-radius:4px;
+}
+
+#bottom-cart .content .line-detail{
+	border:2px solid #000;
+	background-color:#fff;
+	border-bottom:0;
+}
 
 #nav-main{
 	margin-left: 195px; height: 30px; width: 700px;
