@@ -16,6 +16,7 @@ div, ul, li, p, span { margin: 0; padding: 0; }
 
 <div id="product_list">
   <h1>Listing products</h1>
+<% if (session[:user_id]) and (User.find(session[:user_id]).user_type == 0) %>
 
  <table width="90%" border="0" cellspacing="100%" cellpadding="80">
  	<% i = 1 %>
@@ -71,3 +72,6 @@ div, ul, li, p, span { margin: 0; padding: 0; }
 <p> <%= will_paginate @products %></p>
 
 <%= link_to 'New product', new_product_path %>
+<%else%>
+<p>permission deny</p>
+<%end%>
