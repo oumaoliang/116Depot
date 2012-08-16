@@ -342,7 +342,7 @@ body {
 	float: left;
 }
 
-#botton_cart {
+#bottom_cart {
 	position: fixed;
 	right:10px;
 	bottom:1px;
@@ -351,11 +351,12 @@ body {
 	color:#3E3E3E;
 }
 
-#botton_cart .content {
+#bottom_cart .content {
 	background:#87CEFF;
 }
 
-#botton_cart .content .line_brief {
+
+#bottom_cart .content .line_brief {
 	cursor:pointer;
 	background:#F8B9F8;
 	padding:7px;
@@ -363,7 +364,7 @@ body {
 	color:#fff;
 }
 
-#botton_cart .content .line_brief .col_group {
+#bottom_cart .content .line_brief .col_group {
 	color:#333;
 	padding:3px 20px 3px 5px;
 	margin-top:4px;
