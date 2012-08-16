@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
     
    if params[:ship].to_i==0
      Notifier.order_shipped(@order).deliver
-     
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +43,6 @@ class OrdersController < ApplicationController
     
     @order = Order.new
 
-    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
@@ -54,7 +52,6 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
     @order = Order.find(params[:id]) 
-
   end
 
   # POST /orders
